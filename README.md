@@ -1,4 +1,4 @@
-# Mirantis k0rdent Enterprise Documentation
+# Mirantis Secure Registry 4 Documentation
 
 This project utilises Mkdocs with the Material theme and Mermaid for
 diagrams. Currently the docs are published using github actions on github pages
@@ -79,15 +79,3 @@ By default, we follow the [Kubernetes documentation style guide](https://kuberne
 
 All header text should be capitalized.
 
-## Referencing Kubernetes nested resources
-
-Please use the dot notation.  So in the following:
-
-```
-apiVersion: v1
-kind: Secret
-metadata:
-  name: my-secret
-```
-
-To refer to the `name` field, please use `.metadata.name` and not `name`.
