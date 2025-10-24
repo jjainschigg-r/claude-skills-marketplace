@@ -3,7 +3,7 @@ site_description: Documentation for Mirantis Secure Registry 4
 site_author: Mirantis, Inc.
 
 docs_dir: docs/
-repo_name: MKE 4 Documentation
+repo_name: MSR 4 Documentation
 repo_url: https://github.com/Mirantis/msr-docs
 edit_uri: https://github.com/Mirantis/msr-docs/edit/main/docs/
 
@@ -72,11 +72,83 @@ plugins:
         - requirements.txt
   - redirects:
       redirect_maps:
- 
+
+not_in_nav: |
+    /common/*
+
 nav:
   - MSR 4 Documentation: index.md
+  - Product Overview: product-overview.md
+  - Architecture:
+    - Architecture: architecture/index.md
+    - Reference Architecture:
+      - Reference Architecture: architecture/architecture-reference.md
+      - Consumers Layer: architecture/architecture-reference/consumers-layer.md
+      - Fundamental Services Layer: architecture/architecture-reference/fundamental-services-layer.md
+      - Data Access Layer: architecture/architecture-reference/data-access-layer.md
+      - Integration: architecture/architecture-reference/integration.md
+    - Deployment:
+      - Deployment: architecture/deployment/deployment.md
+      - Deployment Options:
+        - Deployment Options: architecture/deployment/deployment-options.md
+        - All-in-one Deployment: architecture/deployment/all-in-one-deployment.md
+        - High Availability Deployment:  architecture/deployment/ha-deployment.md
+      - Components Deployment:
+        - Components Deployment: architecture/deployment/components-deployment.md
+        - Web Portal: architecture/deployment/web-portal.md
+        - Proxy (API Routing): architecture/deployment/proxy.md
+        - Core: architecture/deployment/core.md
+        - Job Service: architecture/deployment/job-service.md
+        - Registry: architecture/deployment/registry.md
+        - Tivy: architecture/deployment/trivy.md
+        - K-V storage: architecture/deployment/k-v-storage.md
+        - SQL Database: architecture/deployment/sql-database.md
+      - Deployment Resources:
+        - Deployment Resources: architecture/deployment/deployment-resources.md
+        - Harbor Helm Chart: architecture/deployment/harbor-helm-chart.md
+        - Redis Helm Chart: architecture/deployment/redis-helm-chart.md
+        - PostgreSQL Helm Chart: architecture/deployment/postgresql-helm-chart.md
+      - System Requirements: architecture/system-reqs.md
+      - Storage: architecture/storage.md
+      - Networking: architecture/networking.md
+      - Security:
+        - Security: architecture/security/security.md
+        - Kubernetes Security: architecture/security/kubernetes-security.md
+        - Harbor Security: architecture/security/harbor-security.md
+        - K-V Storage (Redis) Security: architecture/security/kv-storage-redis-security.md
+        - DB Service (PostgreSQL) Security: architecture/security/db-service-security.md
+        - Logging and Monitoring: architecture/security/logging-and-monitoring.md
+        - Supply Chain: architecture/security/supply-chain.md
+  - Operations Guide:
+    - Operations Guide: operations/index.md
+    - Authentication Configuration:
+      - Authentication Configuration: operations/authentication-configuration/authentication-configuration.md
+      - LDAP Authentication: operations/authentication-configuration/ldap-authentication.md
+      - OIDC Authentication: operations/authentication-configuration/oidc-authentication.md
+      - Database Authentication: operations/authentication-configuration/database-authentication.md
+    - Configuring Replication: operations/configuring-replication.md
+    - Configuring Webhooks: operations/configuring-webhooks.md
+    - Log Rotation in Mirantis Secure Registry: operations/log-rotation.md
+    - Managing Garbage Collection: operations/managing-garbage-collection.md
+    - Managing Project Permissions: operations/managing-project-permissions.md
+    - Managing Tag Retention Rules: operations/managing-tag-retention-rules.md
+    - Signing Artifacts with Cosign: operations/signing-artifacts-with-cosign.md
+    - Vulnerability Scanning: operations/vulnerability-scanning.md
+  - Backup Guide:
+    - Backup Guide: backup/index.md
+    - HA Backup:
+      - HA Backup: backup/ha-backup/ha-backup.md
+      - File System Backup vs Snapshot Backup: backup/ha-backup/system-backup-vs-snapshot-backup.md
+      - Best Backup practices: backup/ha-backup/best-backup-practises.md
+      - Monitoring Backup and Restore Status: backup/ha-backup/monitoring-backup-and-restore-status.md
+      - Filesystem-Level Backups with Velero: backup/ha-backup/filesystem-level-backups-with-velero.md
+      - Snapshot Backups with Velero: backup/ha-backup/snapshot-backups-with-velero.md
+      - Schedule Backups and Restores: backup/ha-backup/automating-and-scheduling.md
+    - Single Instance Backup: backup/instance-backup.md
+  - Release Cadence and Support Lifecycle: release-cadence-and-support-cycle.md
   - Support, Services, Contact:
     - Overview: support/index.md
+    - Collect support bundles on MKE clusters: support/collect-support-bundles-on-mke-clusters.md
     - Get support: https://www.mirantis.com/support/enterprise-support-services/
     - Mirantis CloudCare Portal: https://support.mirantis.com/s/login/
     - Contact us: https://www.mirantis.com/contact/
@@ -125,3 +197,7 @@ extra:
   analytics:
   docsVersionInfo:
 
+    # Global variables
+
+  latest_msr_4_0_tag: '4.0.2'
+  latest_mke_tag: '3.8.8'
