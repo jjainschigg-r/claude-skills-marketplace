@@ -124,6 +124,23 @@ nav:
         - DB Service (PostgreSQL) Security: architecture/security/db-service-security.md
         - Logging and Monitoring: architecture/security/logging-and-monitoring.md
         - Supply Chain: architecture/security/supply-chain.md
+  - Installation Guide:
+    - Installation Guide: installation/index.md
+    - Prepare MKE 3.x for MSR Installation: installation/prepare-mke-for-msr-install.md
+    - Prerequisites: installation/msr-system-reqs.md
+    - Install MSR with High Availability:
+        - Install MSR with High Availability: installation/installation-with-high-availability/index.md
+        - Prerequisites: installation/installation-with-high-availability/ha-prerequisites.md
+        - Install Helm: installation/installation-with-high-availability/ha-install-helm.md
+        - Create PVC across Kubernetes workers: installation/installation-with-high-availability/ha-create-pvc-across-kubernetes-workers.md
+        - Install highly available PostgreSQL: installation/installation-with-high-availability/ha-install-and-set-up-postgresql.md
+        - Install highly available Redis: installation/installation-with-high-availability/ha-install-highly-available-redis.md
+        - Install highly available MSR: installation/installation-with-high-availability/install-ha-msr.md
+    - Install MSR single host using Docker Compose:
+        - Install MSR single host using Docker Compose: installation/msr-docker-install/index.md
+        - Prerequisites: installation/msr-docker-install/docker-compose-prerequisites.md
+        - Install MSR using Docker Compose: installation/msr-docker-install/docker-compose-install.md
+        - Manage MSR with Docker Compose: installation/msr-docker-install/manage-with-docker-compose.md
   - Operations Guide:
     - Operations Guide: operations/index.md
     - Authentication Configuration:

@@ -6,9 +6,9 @@ all services run as single-instance components without a high availability (HA)
 or replication. Such an approach is not applicable for production usage but is
 useful for testing or Proof of Concept. Refer to the installation
 guidance in the MSR 4 documentation
-[using a docker compose](../../installation/msr-docker-install/msr-docker-install.md)
+[using a docker compose](../../installation/msr-docker-install/index)
 or you can use a helm chart approach (that is mentioned in
-[HA deployment variant](../../installation/installation-with-high-availability/installation-with-high-availability.md)
+[HA deployment variant](../../installation/installation-with-high-availability/index)
 instead, but scaling replicas to 1 in variables configuration.
 
 While this deployment effectively showcases MSR 4's capabilities and
@@ -24,7 +24,7 @@ MSR 4-related services.
 There are two methods for installing the all-in-one MSR 4:
 
 1. Using Kubernetes Helm
-2. [Using Docker Compose](../../installation/msr-docker-install/msr-docker-install.md)
+2. [Using Docker Compose](../../installation/msr-docker-install/index)
 
 Each approach has its own advantages. The Kubernetes method is similar to
 High Availability (HA) mode and allows for easy scaling from a single-node

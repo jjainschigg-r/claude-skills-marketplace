@@ -4,7 +4,7 @@
 The **Highly Available (HA) Deployment** of MSR 4 is distributed across three
 or more worker nodes, ensuring resilience and reliability through multiple
 service instances. For installation guidance, refer to
-the [installation-with-high-availability](../../installation/installation-with-high-availability/installation-with-high-availability.md).
+the [installation-with-high-availability](../../installation/installation-with-high-availability/index).
 
 A key aspect of this deployment is that **Job Service** and **Registry**
 utilize a shared volume, which should be backed by a non-local, shared file

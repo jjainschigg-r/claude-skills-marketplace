@@ -27,18 +27,45 @@
           Set `clusterSize` to the desired number of Redis nodes.
 
       ```bash
-      helm upgrade -i msr-redis redis-replication \
+      helm install -i msr-redis redis-replication \
           --repo https://ot-container-kit.github.io/helm-charts \
           --set redisReplication.clusterSize=3 \
           --set redisReplication.redisSecret.secretName=msr-redis-secret \
-          --set redisReplication.redisSecret.secretKey=REDIS_PASSWORD
+          --set redisReplication.redisSecret.secretKey=REDIS_PASSWORD \
+          --set redisReplication.image=quay.io/opstree/redis \
+          --set redisReplication.tag=v8.2.2
       ```
 
-5. Retrieve connection details for the Redis service:
+5. Retrieve the connection details for the Redis service:
 
       **Get the service's port number:**
 
       ```bash
       kubectl get svc msr-redis -o jsonpath={.spec.ports..port}
       ```
+   
+## Upgrade highly available Redis
 
+1. Verify Redis version:
+
+   ```bash
+   kubectl get pod <Redis Pod> -o jsonpath='{.spec.containers[*].image}'
+   ```
+
+2. Upgrade Redis:
+
+   ```bash
+   helm upgrade msr-redis redis-replication \
+     --repo https://ot-container-kit.github.io/helm-charts \
+     --set redisReplication.clusterSize=3 \
+     --set redisReplication.redisSecret.secretName=msr-redis-secret \
+     --set redisReplication.redisSecret.secretKey=REDIS_PASSWORD \
+     --set redisReplication.image=quay.io/opstree/redis \
+     --set redisReplication.tag=v8.2.2
+   ```
+
+   !!! note
+
+       Mirantis recommends installing Redis version 8.2.2 or the
+       latest validated release. For more options, refer to the official
+       [redis-operator page](https://github.com/OT-CONTAINER-KIT/redis-operator).
