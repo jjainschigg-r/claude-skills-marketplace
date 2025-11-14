@@ -15,23 +15,23 @@ To verify that all repositories have been migrated:
 
 1. Truncate and sort the data on both versions of MSR:
 
-   ```bash
-   tail -n +2 data/csv/harbor_projects.csv | cut -d, -f2 | sort > harbor_repo
-   tail -n +2 data/csv/msr_repositories.csv | cut -d, -f1,4 | sort > msr_repo
-   ```
+    ```bash
+    tail -n +2 data/csv/harbor_projects.csv | cut -d, -f2 | sort > harbor_repo
+    tail -n +2 data/csv/msr_repositories.csv | cut -d, -f1,4 | sort > msr_repo
+    ```
 
 2. Count how many namespace and repository name entries exist in the original
    MSR data:
 
-   ```bash
-   cat msr_repo | wc -l
-   ```
+    ```bash
+    cat msr_repo | wc -l
+    ```
 
 3. Repeat the process for MSR 4 data:
 
-   ```bash
-   cat harbor_repo | wc -l
-   ```
+    ```bash
+    cat harbor_repo | wc -l
+    ```
 
 4. Compare the results. The MSR 4 output should have exactly one more entry.
    This extra entry comes from the default `library` repository included with
@@ -43,9 +43,10 @@ To verify that all repositories have been migrated:
 6. Use `vimdiff` or a similar tool to compare the files and confirm that
    repository names match between MSR versions.
 
-   !!! note
-       `vimdiff` is not included in the container and must be installed
-       separately if used.
+    !!! note
+
+        `vimdiff` is not included in the container and must be installed
+        separately if used.
 
 ## Groups
 
@@ -54,60 +55,61 @@ To verify that all groups have been migrated:
 1. Filter original MSR Enzi group data by removing any rows where the
    `groupDN` field is empty:
 
-   ```bash
-   docker run --rm \
-       -v ./sql:/app/data/sql \
-       -v ./csv:/app/data/csv \
-       -v ./config:/app/config \
-       --network host \
-       registry.mirantis.com/msrh/migrate:latest \
-       mlr --csv filter '!is_empty($groupDN)' /app/data/csv/enzi_teams.csv
-   ```
+    ```bash
+    docker run --rm \
+        -v ./sql:/app/data/sql \
+        -v ./csv:/app/data/csv \
+        -v ./config:/app/config \
+        --network host \
+        registry.mirantis.com/msrh/migrate:latest \
+        mlr --csv filter '!is_empty($groupDN)' /app/data/csv/enzi_teams.csv
+    ```
 
-   !!! note
-       Groups with empty `groupDN` values are skipped during migration and
-       not imported into MSR 4.
+    !!! note
+
+        Groups with empty `groupDN` values are skipped during migration and
+        not imported into MSR 4.
 
 2. Count how many valid groups remain after filtering:
 
-   ```bash
-   docker run --rm \
-       -v ./sql:/app/data/sql \
-       -v ./csv:/app/data/csv \
-       -v ./config:/app/config \
-       --network host \
-       registry.mirantis.com/msrh/migrate:latest \
-       mlr --csv filter '!is_empty($groupDN)' /app/data/csv/enzi_teams.csv | wc -l
-   ```
+    ```bash
+    docker run --rm \
+        -v ./sql:/app/data/sql \
+        -v ./csv:/app/data/csv \
+        -v ./config:/app/config \
+        --network host \
+        registry.mirantis.com/msrh/migrate:latest \
+        mlr --csv filter '!is_empty($groupDN)' /app/data/csv/enzi_teams.csv | wc -l
+    ```
 
 3. Determine how many groups are currently present in MSR 4 using the exported
    PostgreSQL data:
 
-   ```bash
-   docker run --rm \
-      -v ./sql:/app/data/sql \
-      -v ./csv:/app/data/csv \
-      -v ./config:/app/config \
-      --network host \
-      registry.mirantis.com/msrh/migrate:latest \
-      mlr --csv sort -f name data/csv/harbor_groups.csv | wc -l
-   ```
+    ```bash
+    docker run --rm \
+       -v ./sql:/app/data/sql \
+       -v ./csv:/app/data/csv \
+       -v ./config:/app/config \
+       --network host \
+       registry.mirantis.com/msrh/migrate:latest \
+       mlr --csv sort -f name data/csv/harbor_groups.csv | wc -l
+    ```
 
 4. Compare the group counts from both steps.
 
 5. Extract and sort group names from the input Enzi set, saving the output to
    a file named `msr_groups`:
 
-   ```bash
-   cat ./csv/msr_repositories_with_enzi_team.csv | cut -d, -f1,9,12 | \
-   awk -F',' '$3 != ""' | cut -d, -f1,2 | sort -u > msr_groups
-   ```
+    ```bash
+    cat ./csv/msr_repositories_with_enzi_team.csv | cut -d, -f1,9,12 | \
+    awk -F',' '$3 != ""' | cut -d, -f1,2 | sort -u > msr_groups
+    ```
 
 6. Repeat the process for MSR 4 groups:
 
-   ```bash
-   cat ./csv/harbor_groups.csv | cut -d, -f2 | sort -u > msr4_groups
-   ```
+    ```bash
+    cat ./csv/harbor_groups.csv | cut -d, -f2 | sort -u > msr4_groups
+    ```
 
 7. Compare the contents of `msr_groups` and `msr4_groups`. Verify whether group
    names have been correctly prefixed by their namespaces. Use tools such as

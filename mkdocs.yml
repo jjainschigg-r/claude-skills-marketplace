@@ -170,6 +170,16 @@ nav:
       - Snapshot Backups with Velero: backup/ha-backup/snapshot-backups-with-velero.md
       - Schedule Backups and Restores: backup/ha-backup/automating-and-scheduling.md
     - Single Instance Backup: backup/instance-backup.md
+    - Disaster Recovery:
+      - Disaster Recovery: backup/disaster-recovery/index.md
+      - NFS Metadata Restore:
+        - NFS Metadata Restore: backup/disaster-recovery/nfs-metadata-restore/index.md
+        - Install MinIO and Velero: backup/disaster-recovery/nfs-metadata-restore/metadata-install-minio-and-velero.md
+        - Backup and Restore: backup/disaster-recovery/nfs-metadata-restore/metadata-restore-backup.md
+      - NFS Full Restore:
+        - NFS Full Restore: backup/disaster-recovery/nfs-full-restore/index.md
+        - Install MinIO and Velero: backup/disaster-recovery/nfs-full-restore/full-install-minio-and-velero.md
+        - Backup and Restore: backup/disaster-recovery/nfs-full-restore/full-restore-backup.md
   - Migration Guide:
     - Migration Guide: migration/index.md
     - Manual Migration:
@@ -183,9 +193,9 @@ nav:
       - Migration Prerequisites: migration/tool-migration/migration-prerequisites.md
       - Install Migration Tool: migration/tool-migration/install-migration-tool.md
       - Database Access Configuration: migration/tool-migration/db-configuration.md
-      - Configure Migration Settings: tmigration/ool-migration/tool-configure-migration.md
+      - Configure Migration Settings: migration/tool-migration/tool-configure-migration.md
       - Perform Migration:
-        - Perform Migration: migration/perform-tool-migration.md
+        - Perform Migration: migration/tool-migration/perform-tool-migration.md
         - Migrate Projects: migration/tool-migration/partial-tool-migration/migrate-projects.md
         - Migrate Permissions: migration/tool-migration/partial-tool-migration/migrate-permissions.md
         - Migrate Push and Poll Mirroring Policies: migration/tool-migration/partial-tool-migration/migrate-push-poll-mirroring-policies.md
@@ -193,15 +203,16 @@ nav:
       - Post-Migration Configuration: migration/tool-migration/configure-migration-settings.md
       - Post-Migration Cleanup: migration/tool-migration/clean-up-after-migration.md
       - Migration Tool Reference:
-        - Migration Tool Reference: migration/tool-migration/index.md
-        - Command Reference: migration/tool-migration/command-reference.md
-        - Configuration Reference: migration/tool-migration/configuration-reference.md
+        - Migration Tool Reference: migration/tool-migration/migration-tool-reference/index.md
+        - Command Reference: migration/tool-migration/migration-tool-reference/command-reference.md
+        - Configuration Reference: migration/tool-migration/migration-tool-reference/configuration-reference.md
       - Migration Tool Release Notes:
-        - Migration Tool Release Notes: tool-migration/index.md
-        - Migration Tool 1.2.0: tool-migration/1-2-0.md
-        - Migration Tool 1.1.0: tool-migration/1-1-0.md
-        - Migration Tool 1.0.1: tool-migration/1-0-1.md
-        - Migration Tool 1.0.0: tool-migration/1-0-0.md
+        - Migration Tool Release Notes: migration/tool-migration/migration-tool-release-notes/index.md
+        - Migration Tool 1.3.0: migration/tool-migration/migration-tool-release-notes/1-3-0.md
+        - Migration Tool 1.2.0: migration/tool-migration/migration-tool-release-notes/1-2-0.md
+        - Migration Tool 1.1.0: migration/tool-migration/migration-tool-release-notes/1-1-0.md
+        - Migration Tool 1.0.1: migration/tool-migration/migration-tool-release-notes/1-0-1.md
+        - Migration Tool 1.0.0: migration/tool-migration/migration-tool-release-notes/1-0-0.md
   - Release Notes:
     - Release Notes: release-notes/index.md
     - 4.13.2:

@@ -14,37 +14,38 @@ To configure your target environment:
 3. Add the required variables with the appropriate values according to your
    deployment.
 
-   Ensure the following configuration is present:
+    Ensure the following configuration is present:
 
-   ```bash
-   HARBOR_API_BASE_URL=<HARBOR-API-ENDPOINT-FQDN>
-   HARBOR_API_USER=admin
-   HARBOR_API_PASSWORD=<REDACTED>
-   HARBOR_API_TLS_VERIFICATION=False
-   HARBOR_DB_HOST=localhost
-   HARBOR_DB_USER=msr
-   HARBOR_DB_PASSWORD=<HARBOR-DB-PASSWORD>
-   HARBOR_SECRET_KEY=<MSR4-SECRETKEY-VALUE> #Obtain from MSR4 values secretKey
-   MIGRATION_SOURCE_REGISTRY_URL=<SOURCE-MSR-REGISTRY>
-   MIGRATION_SOURCE_REGISTRY_ADMIN_USERNAME=admin
-   MIGRATION_SOURCE_REGISTRY_ADMIN_PASSWORD=<ADMIN-PASSWORD>
-   MIGRATION_SOURCE_REGISTRY_WITH_TLS_VERIFICATION=False
-   ```
+    ```bash
+    HARBOR_API_BASE_URL=<HARBOR-API-ENDPOINT-FQDN>
+    HARBOR_API_USER=admin
+    HARBOR_API_PASSWORD=<REDACTED>
+    HARBOR_API_TLS_VERIFICATION=False
+    HARBOR_DB_HOST=localhost
+    HARBOR_DB_USER=msr
+    HARBOR_DB_PASSWORD=<HARBOR-DB-PASSWORD>
+    HARBOR_SECRET_KEY=<MSR4-SECRETKEY-VALUE> #Obtain from MSR4 values secretKey
+    MIGRATION_SOURCE_REGISTRY_URL=<SOURCE-MSR-REGISTRY>
+    MIGRATION_SOURCE_REGISTRY_ADMIN_USERNAME=admin
+    MIGRATION_SOURCE_REGISTRY_ADMIN_PASSWORD=<ADMIN-PASSWORD>
+    MIGRATION_SOURCE_REGISTRY_WITH_TLS_VERIFICATION=False
+    ```
 
-   !!! note
-       The secret key in Harbor is required for replicating container images.
+    !!! note
+
+        The secret key in Harbor is required for replicating container images.
 
 4. Configure the replication schedule in the `config/config.env` file. If you
    are running the migration immediately, update the default cron value to
    match your intended schedule.
 
-   ```bash
-   REUSE_ALREADY_FETCHED_DATA=True
-   REPLICATION_TRIGGER_CRON="0 0 1 * * *"
-   ```
+    ```bash
+    REUSE_ALREADY_FETCHED_DATA=True
+    REPLICATION_TRIGGER_CRON="0 0 1 * * *"
+    ```
 
-   Refer to the [Configuration Reference](reference-migration-tool/configuration-reference.md) 
-   for more details.
+    Refer to the [Configuration Reference](reference-migration-tool/configuration-reference.md) 
+    for more details.
 
 ## Configure Migration Mode
 
