@@ -107,7 +107,7 @@ To do so, complete the following steps on your local migration workstation:
         You need to source a client bundle that has access to the source registry
         to use the copy commands.
 
-    !!! important
+    !!! info
 
         Both commands must be executed, and the processes must remain active
         throughout the migration. Select one of the following options to ensure

@@ -136,7 +136,7 @@ downtime or manual migration tools like MMT. MSR 2 or 3 can remain active
 alongside MSR 4, allowing teams to update pipelines while maintaining system
 availability.
 
-For more information, refer to [Migration Guide](link:TODO).
+For more information, refer to [Migration Guide](../migration/index.md).
 
 ## Summary
 

@@ -3,20 +3,21 @@
 After upgrading MSR, several settings will not carry over automatically.  
 Below are key aspects to consider after a successful migration:
 
-| Configuration area | Required actions                                                                                                                                                                                                                                                                                                    |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Configuration area | Required actions |
+|--------------------|------------------|
 | **Project Visibility** | Project visibility (public/private) must be configured manually. In MSR 3.x, private and public image repositories could coexist under a single organization. In MSR 4, visibility is set only at the project level. Mixed public/private repositories under one organization in MSR 3.x must be manually adjusted. |
-| **Project Permissions** | MSR 4 organizes repositories within projects. Ensure that project-level permissions are properly recreated. See: [Managing Project Permissions](../../operations/managing-project-permissions.md).                                                                                                                  |
-| **Registry Replication** | Re-establish any replication or mirroring rules and schedules in MSR 4. See: [Configuring Replication](../../operations/configuring-replication.md).                                                                                                                                                                |
-| **Image Tag Retention** | Manually configure existing retention policies for images in MSR 4 to ensure appropriate lifecycle management. See: [Managing Tag Retention](../../operations/managing-tag-retention-rules.md).                                                                                                                        |
-| **Scanning Settings** | Configure or re-enable Trivy image scanning policies. See: [Vulnerability Scanning](../../operations/vulnerability-scanning.md).                                                                                                                                                                                       |
-| **Audit Logs** | Set up logging mechanisms in MSR 4 for compliance. See: [Log Rotation in Mirantis Secure Registry](../../operations/log-rotation.md).                                                                                                                                                                                  |
-| **Webhooks** | Recreate and configure webhooks to point to MSR 4. See: [Configuring Webhooks](../../operations/configuring-webhooks.md).                                                                                                                                                                                              |
-| **CI/CD Pipelines** | Update custom CI/CD pipelines to reference MSR 4.                                                                                                                                                                                                                                                                   |
-| **Signed Images** | Reconfigure image signing using Cosign. See: [Signing Artifacts with Cosign](../../operations/signing-artifacts-with-cosign.md).                                                                                                                                                                                       |
-| **Garbage Collection Settings** | Manually reconfigure garbage collection policies in MSR 4. See:[Managing Garbage Collection](../../operations/managing-garbage-collection.md).                                                                                                                                                                         |
-| **Certificate Management** | Re-establish custom certificate configurations in MSR 4.                                                                                                                                                                                                                                                            |
-| **API Updates** | Update API endpoints and account for changes in MSR 4’s API.                                                                                                                                                                                                                                                        |
+| **Project Permissions** | MSR 4 organizes repositories within projects. Ensure that project-level permissions are properly recreated. See: <a href="/operations/managing-project-permissions/">Managing Project Permissions</a>. |
+| **Registry Replication** | Re-establish any replication or mirroring rules and schedules in MSR 4. See: <a href="/operations/configuring-replication/">Configuring replication</a>. |
+| **Image Tag Retention** | Manually configure existing retention policies for images in MSR 4 to ensure appropriate lifecycle management. See: <a href="/operations/managing-tag-retention-rules/">Managing Tag Retention</a>. |
+| **Scanning Settings** | Configure or re-enable Trivy image scanning policies. See: <a href="/operations/vulnerability-scanning/">Vulnerability Scanning</a>. |
+| **Audit Logs** | Set up logging mechanisms in MSR 4 for compliance. See: <a href="/operations/log-rotation/">Log Rotation in Mirantis Secure Registry</a>. |
+| **Webhooks** | Recreate and configure webhooks to point to MSR 4. See: <a href="/operations/configuring-webhooks/">Configuring Webhooks</a>. |
+| **CI/CD Pipelines** | Update custom CI/CD pipelines to reference MSR 4. |
+| **Signed Images** | Reconfigure image signing using Cosign. See: <a href="/operations/signing-artifacts-with-cosign/">Signing Artifacts with Cosign</a>. |
+| **Garbage Collection Settings** | Manually reconfigure garbage collection policies in MSR 4. See: <a href="/operations/managing-garbage-collection/">Managing Garbage Collection</a>. |
+| **Certificate Management** | Re-establish custom certificate configurations in MSR 4. |
+| **API Updates** | Update API endpoints and account for changes in MSR 4's API. |
+
 
 ## Pruning Policies
 

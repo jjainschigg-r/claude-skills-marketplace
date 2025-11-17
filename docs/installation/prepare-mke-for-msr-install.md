@@ -1,6 +1,6 @@
 # Prepare MKE 3.x for MSR Installation
 
-!!! important
+!!! info
 
     This procedure applies only to Kubernetes environments running  
     MKE 3.x. If you are using MKE 4.x, no additional preparation is  
@@ -46,7 +46,7 @@ To install MSR on MKE you must first configure both the
 
 10.   Click **Save**.  
 
-!!! important
+!!! info
 
     For already deployed MSR instances, issue a rolling restart of  
     the `postgres-operator` deployment:  

@@ -1,6 +1,6 @@
 # Backup and Restore
 
-!!! important
+!!! warning
 
     The examples herein are illustrative. Always review and adjust all
     deployment details to align with your actual MSR 4 instance before you
