@@ -1,0 +1,48 @@
+name: Build MSR docs
+on:
+  #page_build:
+  workflow_call:
+    secrets:
+      DOCS_SSH_KEY:
+        required: true  
+  workflow_dispatch:
+jobs:
+  build_docs:
+    name: "Build MSR docs"
+    runs-on: arc-runner-set-mirantis
+    steps:
+      - name: Checkout docs
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4
+        with:
+          ref: gh-pages
+          repository: Mirantis/msr-docs
+          path: msr
+
+      - name: Publish docs
+        id: publish
+        env:
+          BRANCHES: 'next latest stable 4.13 4.0'
+          FILES: 'versions.json index.html'
+          GH_TOKEN: ${{ github.token }}
+          DOCS_SSH_KEY_ED25519: ${{ secrets.DOCS_SSH_KEY }}
+          DOCS_ROOT: '/var/www/msr/'
+          DOCS_USER: 'k0rdent-docs'
+          DOCS_HOST: 'docs-us.mirantis.com'
+        shell: bash
+        run: |
+          #!/bin/bash -eх
+          sudo apt-get update
+          sudo apt-get install -y rsync
+          mkdir -p ~/.ssh/
+          echo $DOCS_SSH_KEY_ED25519 | base64 -di > ~/.ssh/id_rsa_ed25519
+          chmod 600 ~/.ssh/id_rsa_ed25519
+          ssh-keygen -l -f ~/.ssh/id_rsa_ed25519
+          export SSH_OPTS=(-o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null")
+          for file in ${FILES} ; do
+            rsync -rv -e "ssh ${SSH_OPTS[*]} -i ~/.ssh/id_rsa_ed25519" msr/$file "${DOCS_USER}@${DOCS_HOST}:${DOCS_ROOT}"
+          done
+          for branch in ${BRANCHES} ; do
+            DOCS_PATH="${DOCS_USER}@${DOCS_HOST}:${DOCS_ROOT}${branch}"
+            echo ${DOCS_PATH}
+            rsync -rv --delete -e "ssh ${SSH_OPTS[*]} -i ~/.ssh/id_rsa_ed25519" msr/${branch}/ "${DOCS_PATH}/"
+          done
