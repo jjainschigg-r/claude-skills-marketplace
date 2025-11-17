@@ -284,8 +284,6 @@ extra:
   version:
     provider: mike
     default: stable
-  analytics:
-  docsVersionInfo:
 
     # Global variables
 
