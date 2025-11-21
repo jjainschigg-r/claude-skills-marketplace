@@ -3,7 +3,7 @@ name: Deploy Docs Consumer (Runs manually or on cron)
 on:
   schedule:
     - cron: '*/15 * * * *'  # every 15 minutes
-  workflow_dispatch:       # manual trigger via GitHub UI
+  workflow_dispatch:  # manual trigger via GitHub UI
 
 permissions:
   contents: write
@@ -13,6 +13,8 @@ permissions:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
+    outputs:
+      pushed: ${{ steps.process.outputs.pushed }}
 
     steps:
       - name: Configure git identity
@@ -32,13 +34,16 @@ jobs:
           git config --global credential.helper store
 
       - name: Grab queue, clear, and process all branches
+        id: process
         run: |
           set -euo pipefail
+          PUSHED=false
 
           touch queue.txt
           QUEUE_LENGTH=$(grep -c -v '^\s*$' queue.txt || true)
           if [[ "$QUEUE_LENGTH" == "0" ]]; then
             echo "Queue is empty. Nothing to process."
+            echo "pushed=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -101,19 +106,29 @@ jobs:
             fi
 
             if [[ "$BRANCH" == "main" ]]; then
-              mike deploy -t "next" --update-aliases --push --alias-type=copy next head
+              mike deploy --ignore --push --prop-set hidden=true next
+              PUSHED=true
 
-            elif [[ "$BRANCH" == "release-v1.1.0" ]]; then
-              mike deploy -t "v1.1.0 (latest)" --update-aliases --push --alias-type=copy v1.1.0 latest stable
+            elif [[ "$BRANCH" == "release-v4.1.1" ]]; then
+              mike deploy -t "4.1.1 (latest)" --update-aliases --push --alias-type=copy 4.1.1 latest stable
               mike set-default --push latest
+              PUSHED=true
 
             else
-              version="${BRANCH#release-}"
+              version="${BRANCH#release-v}"   # Strip the fixed 'release-v' prefix → e.g. 'release-v4.1.0' → '4.1.0'
               mike deploy -t "$version" --update-aliases --push "$version"
-
+              PUSHED=true
             fi
 
             deactivate
           done
 
           echo "All branches processed."
+          echo "pushed=$PUSHED" >> $GITHUB_OUTPUT
+
+  publish:
+    needs: dispatch
+    if: ${{ needs.dispatch.outputs.pushed == 'true' }}
+    uses: ./.github/workflows/publish-docs.yml
+    secrets:
+      DOCS_SSH_KEY: ${{ secrets.DOCS_SSH_KEY }}
