@@ -47,6 +47,13 @@ To configure your target environment:
     Refer to the [Configuration Reference](migration-tool-reference/configuration-reference.md) 
     for more details.
 
+5. If you are migrating from an MSR 3 registry (as opposed to MSR 2),
+   uncomment the following line:
+
+    ```bash
+    ENZI_RETHINKDB_MKE_DB_NAME=enzi
+    ```
+
 ## Configure Migration Mode
 
 By default, the migration tool migrates projects, repositories, and team

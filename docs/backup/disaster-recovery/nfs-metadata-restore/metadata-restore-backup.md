@@ -26,10 +26,11 @@
     kubectl label pv/$(kubectl -n <msr4 namespace> get pvc <msr4 redis pvc> --template={{.spec.volumeName}}) velero.io/exclude-from-backup=true
     ```
 
-3. Exclude the Registry Persistent Volume Claims (PVCs) and Persistent Volumes
+3. Exclude the Registry POD, Persistent Volume Claims (PVCs) and Persistent Volumes
    (PVs) from the backup:
 
     ```bash
+    kubectl label pod <msr4 registry pod> velero.io/exclude-from-backup=true
     kubectl label pvc <msr4 registry pvc> velero.io/exclude-from-backup=true
     kubectl label pv/$(kubectl get pvc <msr4 registry pvc>  --template={{.spec.volumeName}}) velero.io/exclude-from-backup=true
     ```

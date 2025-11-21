@@ -153,7 +153,7 @@ MSR 4.
         1. For the snapshot backup:
 
             ```bash
-            velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.13.0 --bucket msr4-backup --secret-file ./credentials-velero --backup-location-config s3Url=https://<minio-tenant API URL>:<minio-tenant API Port>,s3ForcePathStyle=true,insecureSkipTLSVerify=true --use-volume-snapshots=true --use-node-agent --features=EnableCSI --snapshot-location-config  region=default,apiTimeout=120s
+            velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.13.0 --bucket msr4-backup --secret-file ./credentials-velero --backup-location-config s3Url=https://<minio-tenant API URL>:<minio-tenant API Port>,s3ForcePathStyle=true,insecureSkipTLSVerify=true --use-volume-snapshots=true --use-node-agent --features=EnableCSI --snapshot-location-config  region=default
             ```
 
         2. For the file system backup:
