@@ -109,13 +109,13 @@ jobs:
               mike deploy --ignore --push --prop-set hidden=true next
               PUSHED=true
 
-            elif [[ "$BRANCH" == "release-v4.1.1" ]]; then
-              mike deploy -t "4.1.1 (latest)" --update-aliases --push --alias-type=copy 4.1.1 latest stable
+            elif [[ "$BRANCH" == "release-v4.13" ]]; then
+              mike deploy -t "4.13 (latest)" --update-aliases --push --alias-type=copy 4.13 latest stable
               mike set-default --push latest
               PUSHED=true
 
             else
-              version="${BRANCH#release-v}"   # Strip the fixed 'release-v' prefix → e.g. 'release-v4.1.0' → '4.1.0'
+              version="${BRANCH#release-v}"   # Strip the fixed 'release-v' prefix → e.g. 'release-v4.0' → '4.0'
               mike deploy -t "$version" --update-aliases --push "$version"
               PUSHED=true
             fi
