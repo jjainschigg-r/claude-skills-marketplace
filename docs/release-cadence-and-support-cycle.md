@@ -5,8 +5,8 @@ maintenance releases for the Mirantis Secure Registry (MSR) software every
 six to eight weeks. Primarily, these maintenance releases will aim to resolve
 known issues and issues reported by customers, quash CVEs, and reduce technical
 debt. The version of each MSR maintenance release is reflected in the third
-digit position of the version number (as an example, for MSR 4.0 the most
-current maintenance release is MSR {{{ latest_msr_4_0_tag }}}).
+digit position of the version number (as an example, for MSR 4 the most
+current maintenance release is MSR {{{ latest_msr_4_13_tag }}}).
 
 In parallel with our maintenance MKE release work, each year Mirantis will
 develop and release a new major version of MSR, the Mirantis support lifespan
