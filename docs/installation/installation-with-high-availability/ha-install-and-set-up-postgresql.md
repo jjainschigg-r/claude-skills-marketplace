@@ -3,13 +3,22 @@
 1. Install the Zalando Postgres Operator:
 
     ```bash
-    helm install postgres-operator postgres-operator \
-        --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator
+    helm install postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator --set configGeneral.docker_image=registry.mirantis.com/msr/spilo:17-4.0-p3-20251117010013
     ```
+   !!! note
+
+       Alternatively, you can configure the deployment to use the default image
+       provided in the upstream Zalando Postgres Operator community release:
+
+       ```bash
+
+       helm install postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator
+       ```
 
 2. Create and configure the `msr-postgres-manifest.yaml` file:
 
     !!! warning "OpenShift deployments only"
+
         While the default PostgreSQL Operator settings allow the operator
         to run in a general Kubernetes environment, they are not sufficient
         for OpenShift. To ensure proper functionality, enable the
@@ -17,6 +26,7 @@
         [Zalando Postgres Operator quickstart guide](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md#manual-deployment-setup-on-openshift).
 
     !!! note
+
         Adjust `numberOfInstances` to match your desired cluster size.
 
     ```yaml
@@ -88,4 +98,20 @@
         -l application=spilo,cluster-name=msr-postgres,spilo-role=master \
         -o jsonpath={.items..spec.ports..port}
     ```
+
+## Upgrade highly available PostgreSQL
+
+1. Verify the Zalando Postgres Operator image:
+
+   ```bash
+
+   kubectl get operatorconfiguration.acid.zalan.do -o=jsonpath='{.items[0].configuration.docker_image}'
+   ```
+
+2. Perform the upgrade:
+
+   ```bash
+
+   helm upgrade postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator --set configGeneral.docker_image=registry.mirantis.com/msr/spilo:17-4.0-p3-20251117010013
+   ```
 
