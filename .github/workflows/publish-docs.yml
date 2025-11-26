@@ -21,7 +21,7 @@ jobs:
       - name: Publish docs
         id: publish
         env:
-          BRANCHES: 'next latest stable release-v4.13 release-v4.0'
+          BRANCHES: 'next latest stable 4.13 4.0'
           FILES: 'versions.json index.html'
           GH_TOKEN: ${{ github.token }}
           DOCS_SSH_KEY_ED25519: ${{ secrets.DOCS_SSH_KEY }}
