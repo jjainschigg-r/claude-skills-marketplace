@@ -134,14 +134,15 @@
 
     - Set the initial admin password:
 
-         ```yaml
-         harborAdminPassword: "Harbor12345"
-         ```
+        ```yaml
+        harborAdminPassword: "Harbor12345"
+        ```
 
-         !!! note
-             After you launch MSR 4, change the admin password from the  
-             MSR web UI, or provide an existing secret using the  
-             `existingSecretAdminPasswordKey` parameter.
+        !!! note
+
+            After you launch MSR 4, change the admin password from the  
+            MSR web UI, or provide an existing secret using the  
+            `existingSecretAdminPasswordKey` parameter.
 
     - Set the replica number to ``1`` under ``portal``, ``registry``, ``core``,
       ``trivy`` and ``jobservice``:

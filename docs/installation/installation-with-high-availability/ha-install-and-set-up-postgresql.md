@@ -5,15 +5,15 @@
     ```bash
     helm install postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator --set configGeneral.docker_image=registry.mirantis.com/msr/spilo:17-4.0-p3-20251117010013
     ```
-   !!! note
+    !!! note
 
-       Alternatively, you can configure the deployment to use the default image
-       provided in the upstream Zalando Postgres Operator community release:
+        Alternatively, you can configure the deployment to use the default image
+        provided in the upstream Zalando Postgres Operator community release:
 
-       ```bash
+        ```bash
 
-       helm install postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator
-       ```
+        helm install postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator
+        ```
 
 2. Create and configure the `msr-postgres-manifest.yaml` file:
 
@@ -103,15 +103,13 @@
 
 1. Verify the Zalando Postgres Operator image:
 
-   ```bash
-
-   kubectl get operatorconfiguration.acid.zalan.do -o=jsonpath='{.items[0].configuration.docker_image}'
-   ```
+    ```bash
+    kubectl get operatorconfiguration.acid.zalan.do -o=jsonpath='{.items[0].configuration.docker_image}'
+    ```
 
 2. Perform the upgrade:
 
-   ```bash
-
-   helm upgrade postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator --set configGeneral.docker_image=registry.mirantis.com/msr/spilo:17-4.0-p3-20251117010013
-   ```
+    ```bash
+    helm upgrade postgres-operator postgres-operator --repo https://opensource.zalando.com/postgres-operator/charts/postgres-operator --set configGeneral.docker_image=registry.mirantis.com/msr/spilo:17-4.0-p3-20251117010013
+    ```
 

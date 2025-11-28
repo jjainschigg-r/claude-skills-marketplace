@@ -21,41 +21,41 @@ using `cephfs`. You can adapt these steps for your environment.
    backend you are using. The following example illustrates how to create a
    StorageClass class with a CephFS backend and Ceph CSI:
 
-   ```yaml
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     name: cephfs
-     annotations:
-      storageclass.kubernetes.io/is-default-class: "true"
-   provisioner: cephfs.csi.ceph.com
-   parameters:
-     clusterID: <cluster-id>
-   ```
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: cephfs
+      annotations:
+       storageclass.kubernetes.io/is-default-class: "true"
+    provisioner: cephfs.csi.ceph.com
+    parameters:
+      clusterID: <cluster-id>
+    ```
 
 2. Run `kubectl apply` to apply the StorageClass configuration to the
    cluster, in the appropriate namespace.
 
 3. Create the PVC:
 
-   ```yaml
+    ```yaml
+ 
+       apiVersion: v1
+       kind: PersistentVolumeClaim
+       metadata:
+         name: shared-pvc
+       spec:
+         accessModes:
+           - ReadWriteMany
+         resources:
+           requests:
+             storage: 10Gi
+         storageClassName: cephfs
+    ```
+    !!! note
 
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: shared-pvc
-      spec:
-        accessModes:
-          - ReadWriteMany
-        resources:
-          requests:
-            storage: 10Gi
-        storageClassName: cephfs
-   ```
-   !!! note
-
-       The `.spec.storageClassName` references the name of the
-       `StorageClass` you created above.
+        The `.spec.storageClassName` references the name of the
+        `StorageClass` you created above.
 
 4. Run `kubectl apply` to apply PVC to the cluster, in the appropriate
    namespace.
@@ -67,18 +67,18 @@ using NFS. You can adapt these steps for your environment.
 
 1. Add the Helm repository for the NFS subdirectory external provisioner.
 
-   ```bash
-   helm repo add nfs-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
-   helm repo update
-   ```
+    ```bash
+    helm repo add nfs-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+    helm repo update
+    ```
 
 2. Install the NFS client provisioner. Replace the placeholders with values for
    your environment.
 
-   ```bash
-   helm install nfs-client-provisioner nfs-provisioner/nfs-subdir-external-provisioner \
-     --set nfs.server=<NFS-SERVER-IP> \
-     --set nfs.path=</DIRECTORY/YOU/WANT/TO/USE> \
-     --set storageClass.name=nfs-storage \
-     --set storageClass.defaultClass=true
-   ```
+    ```bash
+    helm install nfs-client-provisioner nfs-provisioner/nfs-subdir-external-provisioner \
+      --set nfs.server=<NFS-SERVER-IP> \
+      --set nfs.path=</DIRECTORY/YOU/WANT/TO/USE> \
+      --set storageClass.name=nfs-storage \
+      --set storageClass.defaultClass=true
+    ```
