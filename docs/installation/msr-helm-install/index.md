@@ -15,4 +15,3 @@ MSR installation with SSL encryption.
     Single-host installations should not be put to use in production
     environments. Mirantis strongly recommends that you use this deployment
     method for development or testing purposes only.
-
