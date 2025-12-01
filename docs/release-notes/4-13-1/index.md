@@ -9,4 +9,3 @@
 
 - [Changelog](changelog.md)
 - [Security Information](security-information.md)
-- [Known Issues](known-issues.md)

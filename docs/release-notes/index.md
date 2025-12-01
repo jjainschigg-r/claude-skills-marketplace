@@ -9,7 +9,8 @@
 
 <div class="grid cards" markdown>
 
--   :star: [**4.13.2**](4-13-2/index.md)
+-   :star: [**4.13.3**](4-13-3/index.md)
+-   :fontawesome-regular-star: [**4.13.2**](4-13-2/index.md)
 -   :fontawesome-regular-star: [**4.13.1**](4-13-1/index.md)
 -   :fontawesome-regular-star: [**4.13.0**](4-13-0/index.md)
 

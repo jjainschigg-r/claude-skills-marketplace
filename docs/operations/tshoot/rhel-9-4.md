@@ -1,16 +1,11 @@
-# Known Issues
-
-This section outlines known issues with Mirantis Secure Registry (MSR),
-including available workarounds.
-
-## MSR installation may fail on RHEL 9.4 and later
+# MSR installation may fail on RHEL 9.4 and later
 
 When deploying MSR in High Availability mode using Helm on Red Hat Enterprise
 Linux (RHEL) 9.4 or later, installation may fail due to a
 [segmentation fault in the bg_mon module](https://github.com/zalando/spilo/issues/1039).  
 This issue occurs when PostgreSQL is deployed using the `zalando/spilo` image.
 
-### Symptoms
+## Symptoms
 
 The failure manifests with the following error messages:
 
@@ -30,7 +25,7 @@ Jun 24 07:55:19 ip-172-31-0-252.eu-central-1.compute.internal systemd[1]: Starte
 Jun 24 07:55:19 ip-172-31-0-252.eu-central-1.compute.internal systemd-coredump[34336]: [🡕] Process 27789 (postgres) of user 101 dumped core.
 ```
 
-### Workaround
+## Workaround
 
 Exclude the `bg_mon` module from the PostgreSQL configuration:
 
@@ -55,5 +50,3 @@ spec:
     parameters:
       shared_preload_libraries: "pg_stat_statements,pgextwlist,pg_auth_mon,set_user,timescaledb,pg_cron,pg_stat_kcache"
 ```
-
-

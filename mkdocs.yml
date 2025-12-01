@@ -159,6 +159,9 @@ nav:
     - Metrics Collection and Visualization: operations/metrics.md
     - Mirror Images: operations/mirror-images.md
     - Signing Artifacts with Cosign: operations/signing-artifacts-with-cosign.md
+    - Troubleshoot MSR:
+      - Troubleshoot MSR: operations/tshoot/index.md
+      - MSR installation may fail on RHEL 9.4 and later: operations/tshoot/rhel-9-4.md
     - Upgrade Guide: operations/upgrade.md
     - Vulnerability Scanning: operations/vulnerability-scanning.md
   - Backup Guide:
@@ -217,21 +220,22 @@ nav:
         - Migration Tool 1.0.0: migration/tool-migration/migration-tool-release-notes/1-0-0.md
   - Release Notes:
     - Release Notes: release-notes/index.md
+    - 4.13.3:
+      - 4.13.3: release-notes/4-13-3/index.md
+      - Changelog: release-notes/4-13-3/changelog.md
+      - Security information: release-notes/4-13-3/security-information.md
     - 4.13.2:
       - 4.13.2: release-notes/4-13-2/index.md
       - Changelog: release-notes/4-13-2/changelog.md
       - Security information: release-notes/4-13-2/security-information.md
-      - Known issues: release-notes/4-13-2/known-issues.md
     - 4.13.1:
       - 4.13.1: release-notes/4-13-1/index.md
       - Changelog: release-notes/4-13-1/changelog.md
       - Security information: release-notes/4-13-1/security-information.md
-      - Known issues: release-notes/4-13-1/known-issues.md
-    - 4-13-0:
+    - 4.13.0:
       - 4.13.0: release-notes/4-13-0/index.md
       - Changelog: release-notes/4-13-0/changelog.md
       - Security information: release-notes/4-13-0/security-information.md
-      - Known issues: release-notes/4-13-0/known-issues.md
   - Release Compatibility Matrix: compat-matrix.md
   - Release Cadence and Support Lifecycle: release-cadence-and-support-cycle.md
   - Support, Services, Contact:
