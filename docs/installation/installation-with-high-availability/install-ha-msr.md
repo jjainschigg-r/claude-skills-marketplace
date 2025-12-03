@@ -128,7 +128,7 @@
                     existingClaim: ""
                     storageClass: "<STORAGE-CLASS-NAME>"
                     subPath: ""
-                    accessMode: ReadWriteOnce
+                    accessMode: ReadWriteMany
                     size: 5Gi
                     annotations: {}
         ```
@@ -203,16 +203,16 @@
             persistentVolumeClaim:
                 registry:
                     storageClass: "<STORAGE-CLASS-NAME>"
-                    accessMode: ReadWriteOnce
+                    accessMode: ReadWriteMany
                     size: 5Gi
                 jobservice:
                     jobLog:
                         storageClass: "<STORAGE-CLASS-NAME>"
-                        accessMode: ReadWriteOnce
+                        accessMode: ReadWriteMany
                         size: 5Gi
                 trivy:
                     storageClass: "<STORAGE-CLASS-NAME>"
-                    accessMode: ReadWriteOnce
+                    accessMode: ReadWriteMany
                     size: 5Gi
         portal:
             replicas: 2
