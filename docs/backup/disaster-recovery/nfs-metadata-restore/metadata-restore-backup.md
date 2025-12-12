@@ -32,7 +32,7 @@
     ```bash
     kubectl label pod <msr4 registry pod> velero.io/exclude-from-backup=true
     kubectl label pvc <msr4 registry pvc> velero.io/exclude-from-backup=true
-    kubectl label pv/$(kubectl get pvc <msr4 registry pvc>  --template={{.spec.volumeName}}) velero.io/exclude-from-backup=true
+    kubectl label pv/$(kubectl -n <msr4 namespace> get pvc <msr4 registry pvc>  --template={{.spec.volumeName}}) velero.io/exclude-from-backup=true
     ```
 
 4. Create the MSR 4 backup:
@@ -53,8 +53,9 @@
    (PVs) specifications in the YAML files:
 
     ```bash
-    kubectl get pvc <MSR4 registry PVC> -o yaml > msr4-pvc-registry.yml
-    kubectl get pv <MSR4 registry PV> -o yaml > msr4-pv-registry.yaml
+    kubectl -n <msr4 namespace> label pod <msr4 registry pod> velero.io/exclude-from-backup=true
+    kubectl -n <msr4 namespace> label pvc <msr4 registry pvc> velero.io/exclude-from-backup=true
+    kubectl -n <msr4 namespace> label pv/$(kubectl -n <msr4 namespace> get pvc <msr4 registry pvc> --template={{.spec.volumeName}}) velero.io/exclude-from-backup=true
     ```
 
 6. Modify the YAML files that will be applied to the target (recovery)
@@ -68,7 +69,6 @@
         * `accessModes: ReadWriteMany` is the same as the original.
 
         ```yaml
-        $ cat msr4-pvc-registry.yml
         apiVersion: v1
         kind: PersistentVolumeClaim
         metadata:
@@ -96,7 +96,6 @@
         * The entire `spec.claimRef` section is removed.
 
         ```yaml
-        $ cat msr4-pv-registry.yaml
         apiVersion: v1
         kind: PersistentVolume
         metadata:
@@ -177,10 +176,10 @@
         kubectl get clusterrole postgres-pod
         ```
 
-    2. If the output of the command above is empty, create the role manually:
+    2. If the output of the command above is empty, manually create the role in
+       `postgres-pod.yml`:
 
         ```yaml
-        $ cat postgres-pod.yml
         apiVersion: rbac.authorization.k8s.io/v1
         kind: ClusterRole
         metadata:
@@ -224,16 +223,20 @@
           - services
           verbs:
           - create
-
-        $ kubectl apply -f postgres-pod.yml
         ```
 
-10. Restore MSR 4 on the target (recovery) Kubernetes cluster:
+10. Apply Postgres Pod to the target (recovery) Kubernetes cluster:
+
+    ```bash
+    kubectl apply -f postgres-pod.yml
+    ```
+
+11. Restore MSR 4 on the target (recovery) Kubernetes cluster:
 
     * [Snapshot Backups with Velero](../../ha-backup/snapshot-backups-with-velero.md)
     * [Filesystem-Level Backups with Velero](../../ha-backup/filesystem-level-backups-with-velero.md)
 
-11. Reconfigure the restored instance of MSR 4 on the target (recovery)
+12. Reconfigure the restored instance of MSR 4 on the target (recovery)
     Kubernetes cluster:
 
     1. Locate the Postgres Database service IP:

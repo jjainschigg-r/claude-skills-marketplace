@@ -53,10 +53,10 @@
         kubectl get clusterrole postgres-pod
         ```
 
-    2. If the output of the command above is empty, create the role manually:
+    2. If the output of the command above is empty, manually create the role
+       in `postgres-pod.yml`:
 
         ```yaml
-        $ cat postgres-pod.yml
         apiVersion: rbac.authorization.k8s.io/v1
         kind: ClusterRole
         metadata:
@@ -100,16 +100,20 @@
           - services
           verbs:
           - create
-
-        $ kubectl apply -f postgres-pod.yml
         ```
 
-5. Restore MSR 4 on the target (recovery) Kubernetes cluster:
+5. Apply Postgres Pod to the target (recovery) Kubernetes cluster:
+
+    ```bash
+    kubectl apply -f postgres-pod.yml
+    ```
+
+6. Restore MSR 4 on the target (recovery) Kubernetes cluster:
 
     * [Snapshot Backups with Velero](../../ha-backup/snapshot-backups-with-velero.md)
     * [Filesystem-Level Backups with Velero](../../ha-backup/filesystem-level-backups-with-velero.md)
 
-6. Reconfigure the restored instance of MSR 4 on the target (recovery)
+7. Reconfigure the restored instance of MSR 4 on the target (recovery)
    Kubernetes cluster:
 
     1. Locate the Postgres Database service IP:

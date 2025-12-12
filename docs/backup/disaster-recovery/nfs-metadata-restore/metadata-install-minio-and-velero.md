@@ -16,7 +16,7 @@ MSR 4.
     * Download the MinIO Tenant `values.yml` file:
 
         ```bash
-        curl -sLo values.yaml https://raw.githubusercontent.com/minio/operator/master/helm/tenant/values.yaml
+        curl -sLo values.yml https://raw.githubusercontent.com/minio/operator/master/helm/tenant/values.yml
         ```
 
     * Configure a username and password for Minio:
@@ -71,7 +71,6 @@ MSR 4.
         * `minio-api-svc.yml`
 
             ```yaml
-            $ cat minio-api-svc.yml
             apiVersion: v1
             kind: Service
             metadata:
@@ -91,7 +90,6 @@ MSR 4.
         * `minio-console-svc.yml`
 
             ```yaml
-            $ cat minio-console-svc.yml
             apiVersion: v1
             kind: Service
             metadata:
@@ -149,13 +147,13 @@ MSR 4.
 
     2. Install Velero:
 
-        1. For the snapshot backup:
+        * For the snapshot backup:
 
             ```bash
             velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.13.0 --bucket msr4-backup --secret-file ./credentials-velero --backup-location-config s3Url=https://<minio-tenant API URL>:<minio-tenant API Port>,s3ForcePathStyle=true,insecureSkipTLSVerify=true --use-volume-snapshots=true --use-node-agent --features=EnableCSI --snapshot-location-config region=default
             ```
 
-        2. For the file system backup:
+        * For the file system backup:
 
             ```bash
             velero install --provider aws --plugins velero/velero-plugin-for-aws:v1.13.0 --bucket <Minio bucket name> --secret-file ./credentials-velero --backup-location-config s3Url=https://<minio-tenant API URL>:<minio-tenant API Port>,s3ForcePathStyle=true,insecureSkipTLSVerify=true --use-volume-snapshots=false --use-node-agent
