@@ -5,9 +5,25 @@
     ```bash
     helm show values oci://registry.mirantis.com/harbor/helm/msr --version <MSR-VERSION> > msr-values.yaml
     ```
+    !!! note
+ 
+        To ensure you are using the latest MSR version, review the [release notes](../../release-notes/index.md).
+        If you need to verify the MSR version directly from the registry, run
+        the following command to retrieve available tags:
+ 
+         ```bash
+         $ curl -s -H "Authorization: Bearer $(
+           curl -s "$(
+             curl -sI https://registry.mirantis.com/v2/harbor/helm/msr/tags/list?n=1 \
+               | tr -d '\r' \
+               | sed -n 's/.*realm="\([^"]*\)".*service="\([^"]*\)".*/\1?service=\2\&scope=repository:harbor\/helm\/msr:pull/p'
+           )" | sed -n 's/.*"token":"\([^"]*\)".*/\1/p'
+         )" https://registry.mirantis.com/v2/harbor/helm/msr/tags/list?n=1000 \
+         | sed -n 's/.*"tags":\[\(.*\)\].*/\1/p' | tr -d '"' | tr ',' '\n' | grep -v -- -
+         ```
 
 2. Helm automatically creates certificates. To manually create your own,  
-   follow these steps:
+   follow these steps: 
 
     1. Create a directory for certificates named `certs`:
 
