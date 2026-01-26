@@ -6,6 +6,28 @@ configured as local storage on the worker nodes or as shared storage,
 utilizing a remote standalone storage cluster like **Ceph**, or by attaching a
 dedicated storage application license.
 
+Kubernetes cluster can provide storage for MSR 4 using a Container Storage
+Interface (CSI), which supports static or dynamic volume provisioning:
+
+- [Container Storage Interface (CSI) for Kubernetes GA](https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/)
+
+- [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+CSI drivers support different access modes. The most relevant access modes for
+MSR 4 are:
+
+- `ReadWriteMany`, which allows multiple Pods on different nodes to read from
+  and write to the same shared volume. This mode is required for high
+  availability (HA) configurations.
+
+- `ReadWriteOnce`, which allows a single Pod on one node to read from and write
+  to a volume. This mode is suitable for an all-in-one configuration.
+
+To install MSR 4 in an HA configuration, the CSI must support `ReadWriteMany`.
+MSR 4 can also be installed by using Helm in an all-in-one configuration by
+following [Install MSR on a Single-Host using Helm](https://docs.mirantis.com/msr/4.13/installation/msr-helm-install/)
+and setting one replica for each component.
+
 ## Local
 
 Local storage is used for non-critical data that can be safely discarded
@@ -49,7 +71,7 @@ to be accessed by multiple replicas of services, such as **Job Service** or
 
 ## External
 
-Note that Harbor also offers the capability to integrate with
+Note that MSR 4 also offers the capability to integrate with
 external object storage solutions, allowing data to be stored directly on
 these platforms without the need for configuring Volumes and Persistent Volume
 Claims (PVCs). This integration remains optional.
