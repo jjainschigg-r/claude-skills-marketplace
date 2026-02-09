@@ -160,6 +160,11 @@ nav:
     - Managing Tag Retention Rules: operations/managing-tag-retention-rules.md
     - Metrics Collection and Visualization: operations/metrics.md
     - Mirror Images: operations/mirror-images.md
+    - Proxy Caches:
+      - Proxy Caches: operations/proxy-caches/index.md
+      - Proxy cache prerequisites: operations/proxy-caches/proxy-cache-prerequisites.md
+      - Proxy cache deployment scenario: operations/proxy-caches/proxy-cache-deployment-scenario.md
+      - Deploy a proxy cache: operations/proxy-caches/deploy-proxy-cache.md
     - Signing Artifacts with Cosign: operations/signing-artifacts-with-cosign.md
     - Troubleshoot MSR:
       - Troubleshoot MSR: operations/tshoot/index.md
