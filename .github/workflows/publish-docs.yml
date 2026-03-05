@@ -9,7 +9,7 @@ on:
 jobs:
   build_docs:
     name: "Build MSR docs"
-    runs-on: arc-runner-set-mirantis
+    runs-on: arc-runner-set-mirantis-private
     steps:
       - name: Checkout docs
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4
