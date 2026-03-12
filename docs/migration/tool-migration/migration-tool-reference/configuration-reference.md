@@ -32,6 +32,8 @@
 | ENZI_RETHINKDB_MKE_DB_NAME | Database name for the MKE-related Enzi RethinkDB content. The default value applies to migration from an MSR 2 registry. Set this value to `enzi` for migration to an MSR 3 registry. | ``enzi`` |
 | ENZI_ACCOUNTS_CSV | CSV file containing all Enzi accounts.                                                                                                                                              | ``enzi_accounts.csv`` |
 | ENZI_TEAMS_CSV | CSV file containing all Enzi teams.                                                                                                                                                 | ``enzi_teams.csv`` |
+| EVENT_BASED_PUSH_MIRRORING_REPLICATION_TRIGGER | Specifies if push mirroring replication rules should have event-based trigger. | ``false`` |
+| EVENT_BASED_POLL_MIRRORING_REPLICATION_TRIGGER | Specifies if poll mirroring replication rules should have event-based trigger. | ``false`` |
 | MSR_RETHINKDB_HOST | Hostname or IP for the MSR 2.9 or MSR 3.1 RethinkDB database.                                                                                                                       | ``localhost`` |
 | MSR_RETHINKDB_PORT | Port for the MSR 2.9 or MSR 3.1 RethinkDB database.                                                                                                                                 | ``28016`` |
 | MSR_RETHINKDB_DB_NAME | Database name for the MSR 2.9 or MSR 3.1 RethinkDB.                                                                                                                                 | ``dtr2`` |

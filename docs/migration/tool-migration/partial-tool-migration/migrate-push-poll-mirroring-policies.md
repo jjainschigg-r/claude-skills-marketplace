@@ -19,10 +19,28 @@ manual scheduling.
     ```
 
 2. Verify the imported policies in **Administration > Replications**. All
-   push mirroring policies will have the prefix `push-`. Each policy is migrated
-   with its associated registry.
+   push mirroring policies will have the prefix `push-`. Each policy is
+   migrated with its associated registry and by default has **Manual**
+   Replication Trigger.
 
-3. Trigger the push mirroring policies:
+3. Configure the trigger for push replication policies in `config/config.env`:
+
+    1. To enable an event-based replication, set:
+   
+        ```
+        EVENT_BASED_PUSH_MIRRORING_REPLICATION_TRIGGER=True
+        ```
+   
+        When new image tags are pushed, the replication policy schedules tasks to
+        replicate the new tags to the destination registry.
+
+    2. To enable scheduled replication using a cron expression, set:
+   
+        ```
+        REPLICATION_TRIGGER_CRON=True
+        ```
+
+4. Trigger the push mirroring policies:
 
     ```bash
     docker run --rm \
@@ -34,10 +52,10 @@ manual scheduling.
        poetry run migration --trigger-push-replication-rules
     ```
 
-    This command applies a cron schedule defined in the
-    `REPLICATION_TRIGGER_CRON` environment variable.
+    This command applies the trigger mode, either cron-based or event-based 
+    defined in the `config/config.env`.
 
-4. Optional. Remove scheduled triggers from all push mirroring policies and
+5. Remove scheduled triggers from all push mirroring policies and
    switch them to manual triggering:
 
     ```bash
@@ -49,6 +67,9 @@ manual scheduling.
        registry.mirantis.com/msrh/migrate:latest \
        poetry run migration --remove-push-replication-rules-trigger
     ```
+
+    If push mirroring trigger needs to change from manual to cron-based or
+    event-based, follow steps 3 and 4.
 
 ## Migrate poll mirroring policies
 
@@ -65,10 +86,28 @@ manual scheduling.
     ```
 
 2. Verify the imported policies in **Administration > Replications**. All
-   poll mirroring policies will have the prefix `pull-`. Each policy is migrated
-   with its associated registry.
+   poll mirroring policies will have the prefix `pull-`. Each policy is
+   migrated with its associated registry and by default has **Manual**
+   Replication Trigger.
 
-3. Trigger the poll mirroring policies:
+3. Configure the trigger for poll replication policies in `config/config.env`:
+
+    1. To enable an event-based replication, set:
+   
+        ```
+        EVENT_BASED_PUSH_MIRRORING_REPLICATION_TRIGGER=True
+        ```
+   
+        When new image tags are polled, the replication policy schedules tasks to
+        replicate the new tags to the destination registry.
+ 
+    2. To enable scheduled replication using a cron expression, set:
+   
+        ```
+        REPLICATION_TRIGGER_CRON=True
+        ```
+
+4. Trigger the poll mirroring policies:
 
     ```bash
     docker run --rm \
@@ -80,10 +119,10 @@ manual scheduling.
        poetry run migration --trigger-pull-replication-rules
     ```
 
-    This command applies a cron schedule defined in the
-    `REPLICATION_TRIGGER_CRON` environment variable.
+    This command applies the trigger mode, either cron-based or event-based 
+    defined in the `config/config.env`.
 
-4. Optional. Remove scheduled triggers from all poll mirroring policies and
+5. Remove scheduled triggers from all poll mirroring policies and
    switch them to manual triggering:
 
     ```bash
@@ -95,3 +134,6 @@ manual scheduling.
        registry.mirantis.com/msrh/migrate:latest \
        poetry run migration --remove-pull-replication-rules-trigger
     ```
+
+    If poll mirroring trigger needs to change from manual to cron-based or
+    event-based, follow steps 3 and 4.
