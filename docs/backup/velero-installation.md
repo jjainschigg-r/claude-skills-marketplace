@@ -9,7 +9,7 @@ cluster resources. For more information, refer to the official
     If you are running MKE 4k, note that Velero was included through version 4.1.1.
     Starting with version 4.1.2, however, it is no longer bundled
     and must be installed separately. Velero remains a fully supported backup
-    solution for for all MKE 4k deployments.
+    solution for all MSR 4 on MKE 4k deployments.
 
 ## Prerequisites
 
