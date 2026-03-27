@@ -58,13 +58,21 @@ authorized users can modify and interact with registry content.
 
 ## Instructions for Setting Up Project Permissions
 
-1. **Log in** to the MSR 4 web interface using your admin credentials.
+1. Log in to the MSR 4 web interface using your admin credentials.
 2. Navigate to **Projects** from the main menu.
 3. Click **+ New Project**.
 
     - **Project Name**: Enter a unique name for your project.
     - **Access Level**: Choose between **Private** (restricted access) or
       **Public** (accessible to all authenticated users).
+
+        !!! warning
+   
+            To prevent unauthorized access to internal or sensitive workloads,
+            use **Private** projects.
+            In internet-facing registries, **Public** projects are visible to all users,
+            thus, anyone can pull images or view metadata without authentication.
+
     - Select **Project quota limits** to enable any quota as desired by MiB,
       GiB, and TiB sizes.
     - Select **Proxy Cache** to enable this to allow this project to act as
@@ -107,7 +115,7 @@ enabled.
 
 ## Automation Using the Harbor API
 
-1. **Install Harbor CLI** (if applicable).
+1. Install Harbor CLI (if applicable).
 2. Use commands like add-user, assign-role, and create-project to automate
    user setup.
 3. Example:
