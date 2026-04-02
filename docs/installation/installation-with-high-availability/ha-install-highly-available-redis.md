@@ -68,4 +68,4 @@
 
         Mirantis recommends installing Redis version 8.2.2 or the
         latest validated release. For more options, refer to the official
-        [redis-operator page](https://github.com/OT-CONTAINER-KIT/redis-operator).
+        [redis-operator page](https://quay.io/repository/opstree/redis?tab=tags&tag=latest).
