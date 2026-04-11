@@ -12,24 +12,24 @@
         <meta name="author" content="Mirantis, Inc.">
       
       
-        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/">
+        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/common/configure-migration/">
       
       
       
       
-      <link rel="icon" href="assets/msr-fav.png">
+      <link rel="icon" href="../../assets/msr-fav.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Claude Skills Marketplace</title>
+        <title>Post-Migration Configuration - Claude Skills Marketplace</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/nav-decor.css">
+      <link rel="stylesheet" href="../../stylesheets/nav-decor.css">
     
-      <link rel="stylesheet" href="stylesheets/external-link.css">
+      <link rel="stylesheet" href="../../stylesheets/external-link.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#claude-skills-marketplace" class="md-skip">
+        <a href="#post-migration-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -100,9 +100,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Claude Skills Marketplace" class="md-header__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
+    <a href="../.." title="Claude Skills Marketplace" class="md-header__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
       
-  <img src="assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Post-Migration Configuration
             
           </span>
         </div>
@@ -222,9 +222,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Claude Skills Marketplace" class="md-nav__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
+    <a href="../.." title="Claude Skills Marketplace" class="md-nav__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
       
-  <img src="assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     Claude Skills Marketplace
@@ -236,19 +236,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -257,7 +248,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -282,6 +272,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pruning-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pruning Policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pruning Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operator-mapping-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator Mapping Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-msr-29-and-msr-31-rule-types-in-msr-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported MSR 2.9 and MSR 3.1 Rule Types in MSR 4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -295,8 +335,210 @@
                   
 
 
-<h1 id="claude-skills-marketplace">Claude Skills Marketplace<a class="headerlink" href="#claude-skills-marketplace" title="Permanent link">#</a></h1>
-<p>Welcome to the Mirantis Claude Skills Marketplace.</p>
+<h1 id="post-migration-configuration">Post-Migration Configuration<a class="headerlink" href="#post-migration-configuration" title="Permanent link">#</a></h1>
+<p>After upgrading MSR, several settings will not carry over automatically.<br />
+Below are key aspects to consider after a successful migration:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration area</th>
+<th>Required actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Visibility</strong></td>
+<td>Project visibility (public/private) must be configured manually. In MSR 3.x, private and public image repositories could coexist under a single organization. In MSR 4, visibility is set only at the project level. Mixed public/private repositories under one organization in MSR 3.x must be manually adjusted.</td>
+</tr>
+<tr>
+<td><strong>Project Permissions</strong></td>
+<td>MSR 4 organizes repositories within projects. Ensure that project-level permissions are properly recreated. See: <a href="/operations/managing-project-permissions/">Managing Project Permissions</a>.</td>
+</tr>
+<tr>
+<td><strong>Registry Replication</strong></td>
+<td>Re-establish any replication or mirroring rules and schedules in MSR 4. See: <a href="/operations/configuring-replication/">Configuring replication</a>.</td>
+</tr>
+<tr>
+<td><strong>Image Tag Retention</strong></td>
+<td>Manually configure existing retention policies for images in MSR 4 to ensure appropriate lifecycle management. See: <a href="/operations/managing-tag-retention-rules/">Managing Tag Retention</a>.</td>
+</tr>
+<tr>
+<td><strong>Scanning Settings</strong></td>
+<td>Configure or re-enable Trivy image scanning policies. See: <a href="/operations/vulnerability-scanning/">Vulnerability Scanning</a>.</td>
+</tr>
+<tr>
+<td><strong>Audit Logs</strong></td>
+<td>Set up logging mechanisms in MSR 4 for compliance. See: <a href="/operations/log-rotation/">Log Rotation in Mirantis Secure Registry</a>.</td>
+</tr>
+<tr>
+<td><strong>Webhooks</strong></td>
+<td>Recreate and configure webhooks to point to MSR 4. See: <a href="/operations/configuring-webhooks/">Configuring Webhooks</a>.</td>
+</tr>
+<tr>
+<td><strong>CI/CD Pipelines</strong></td>
+<td>Update custom CI/CD pipelines to reference MSR 4.</td>
+</tr>
+<tr>
+<td><strong>Signed Images</strong></td>
+<td>Reconfigure image signing using Cosign. See: <a href="/operations/signing-artifacts-with-cosign/">Signing Artifacts with Cosign</a>.</td>
+</tr>
+<tr>
+<td><strong>Garbage Collection Settings</strong></td>
+<td>Manually reconfigure garbage collection policies in MSR 4. See: <a href="/operations/managing-garbage-collection/">Managing Garbage Collection</a>.</td>
+</tr>
+<tr>
+<td><strong>Certificate Management</strong></td>
+<td>Re-establish custom certificate configurations in MSR 4.</td>
+</tr>
+<tr>
+<td><strong>API Updates</strong></td>
+<td>Update API endpoints and account for changes in MSR 4's API.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pruning-policies">Pruning Policies<a class="headerlink" href="#pruning-policies" title="Permanent link">#</a></h2>
+<p>Pruning behavior in MSR 4 differs fundamentally from earlier versions.<br />
+While previous releases used pruning policies to remove images that matched defined criteria,<br />
+MSR 4 introduces retention policies, which are based on preserving images that meet certain tag patterns.</p>
+<p>Use the mapping guide below to manually translate existing pruning rules into MSR 4 retention policies.</p>
+<h3 id="operator-mapping-table">Operator Mapping Table<a class="headerlink" href="#operator-mapping-table" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operator Name</th>
+<th>MSR 2.9 / MSR 3.1 Pruning Operator</th>
+<th>Regex Equivalent</th>
+<th>MSR 2.9 / MSR 3.1 → MSR 4 Translation (Prune = Not Retain)</th>
+<th>MSR 4 Time Frame (<code>template</code> field)</th>
+<th>MSR 4 Conversion to "doublestar" kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equals</td>
+<td>eq</td>
+<td>matching + exact value</td>
+<td>P if equal value = NOT R if equal value = exclude x if equal value</td>
+<td>always</td>
+<td>use exact value</td>
+</tr>
+<tr>
+<td>starts with</td>
+<td>sw</td>
+<td>matching + "^" + value + "*"</td>
+<td>exclude x if starts with value</td>
+<td>always</td>
+<td><code>value*</code></td>
+</tr>
+<tr>
+<td>ends with</td>
+<td>ew</td>
+<td>matching + "*" + value + "$"</td>
+<td>exclude x if ends with value</td>
+<td>always</td>
+<td><code>*value</code></td>
+</tr>
+<tr>
+<td>contains</td>
+<td>c</td>
+<td>matching + "" + value + ""</td>
+<td>exclude x if contains value</td>
+<td>always</td>
+<td><code>\value\</code></td>
+</tr>
+<tr>
+<td>one of</td>
+<td>oo</td>
+<td>matching + <code>\b(word1\|word2\|word3)\b</code></td>
+<td>exclude x if one of value</td>
+<td>always</td>
+<td>Use exact value multiple times</td>
+</tr>
+<tr>
+<td>not one of</td>
+<td>noo</td>
+<td>excluding + <code>\b(word1\|word2\|word3)\b</code></td>
+<td>match x if one of value</td>
+<td>always</td>
+<td>Use exact value multiple times</td>
+</tr>
+<tr>
+<td>matches regex</td>
+<td>matches</td>
+<td>matching + regex value</td>
+<td>exclude x if match value</td>
+<td>always</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-msr-29-and-msr-31-rule-types-in-msr-4">Supported MSR 2.9 and MSR 3.1 Rule Types in MSR 4<a class="headerlink" href="#supported-msr-29-and-msr-31-rule-types-in-msr-4" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>MSR 2.9 / MSR 3.1 Rule Type</th>
+<th>MSR 4 Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tag Name</td>
+<td>Tags field</td>
+</tr>
+<tr>
+<td>Component Name</td>
+<td>For repositories</td>
+</tr>
+<tr>
+<td>All CVSS 3 vulnerabilities</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Critical CVSS 3 vulnerabilities</td>
+<td>None</td>
+</tr>
+<tr>
+<td>High CVSS 3 vulnerabilities</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Medium CVSS 3 vulnerabilities</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Low CVSS 3 vulnerabilities</td>
+<td>None</td>
+</tr>
+<tr>
+<td>License name</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Last updated at</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configure-environment">Configure Environment<a class="headerlink" href="#configure-environment" title="Permanent link">#</a></h2>
+<p>The following infrastructure components require manual updates to align with the new MSR setup:</p>
+<table>
+<thead>
+<tr>
+<th>Infrastructure Component</th>
+<th>Required Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI/CD Pipelines</strong></td>
+<td>Update custom CICD pipelines to leverage the new environments.</td>
+</tr>
+<tr>
+<td><strong>DNS</strong></td>
+<td>Update DNS CNAMEs to point to the new hosts after migration.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -383,12 +625,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
-        <script src="javascripts/plausible.js"></script>
+        <script src="../../javascripts/plausible.js"></script>
       
     
   </body>
