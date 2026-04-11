@@ -1,16 +1,9 @@
-site_name: MSR Documentation
-site_description: Documentation for Mirantis Secure Registry 4
+site_name: Claude Skills Marketplace
+site_description: Mirantis Claude Skills Marketplace
 site_author: Mirantis, Inc.
-# Required for sitemap.xml generation — MkDocs will not populate sitemap.xml
-# without an absolute base URL. Points to /latest/ so that the sitemap served
-# at https://docs.mirantis.com/msr/latest/sitemap.xml contains correct
-# fully-qualified URLs for search engine and AI crawler indexing.
-site_url: https://docs.mirantis.com/msr/latest/
+site_url: https://ai.mirantis.com/claude-skills/
 
 docs_dir: docs/
-# repo_name: MSR 4 Documentation
-# repo_url: https://github.com/Mirantis/msr-docs
-# edit_uri: https://github.com/Mirantis/msr-docs/edit/main/docs/
 
 copyright:
   Copyright &copy; 2026 Mirantis Inc. - All rights reserved
@@ -21,8 +14,8 @@ theme:
   custom_dir: docs/custom_theme
   language: "en"
   favicon: assets/msr-fav.png
-  logo: assets/msr-4-inverted.svg
-  
+  logo: assets/mirantis-logo-inverted.svg
+
   palette:
     - scheme: default
       toggle:
@@ -33,29 +26,21 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
   features:
- #   - toc.autohide
     - search.suggest
     - search.highlight
     - content.code.copy
-    - navigation.tracking   # Anchor tracking
-    - toc.follow            # Sidebar is automatically scrolled so that the active anchor is always visible
-    - search.suggest        # Search suggestions
-    - search.highlight      # Search highlights all occurrences after following the link
-    # - content.action.edit
+    - navigation.tracking
+    - toc.follow
     - content.action.view
-    - navigation.path       # Not working, for sponsors only
     - navigation.indexes
-    # - navigation.tabs
-    # - navigation.tabs.sticky
 
 extra_css:
   - stylesheets/extra.css
   - stylesheets/nav-decor.css
   - stylesheets/external-link.css
-  
 
 extra_javascript:
-  - javascripts/plausible.js            # this will be for metrics
+  - javascripts/plausible.js
 
 plugins:
   - search
@@ -69,213 +54,11 @@ plugins:
   - exclude:
       glob:
         - "*.etag"
-        - Dockerfile.serve-dev
-        - Makefile*
-        - requirements_pip.txt
-        - requirements.txt
   - redirects:
       redirect_maps:
 
-not_in_nav: |
-    /common/*
-
 nav:
-  - Product Overview: index.md
-  - MSR 4 Key Changes:
-    - MSR 4 Key Changes: whats-new/index.md
-    - Product Highlights: whats-new/product-highlights.md
-    - Differences Between MSR Versions: whats-new/differences-between-versions.md
-    - Removed Features: whats-new/removed-features.md
-  - Architecture:
-    - Architecture: architecture/index.md
-    - Reference Architecture:
-      - Reference Architecture: architecture/architecture-reference/index.md
-      - Consumers Layer: architecture/architecture-reference/consumers-layer.md
-      - Fundamental Services Layer: architecture/architecture-reference/fundamental-services-layer.md
-      - Data Access Layer: architecture/architecture-reference/data-access-layer.md
-      - Integration: architecture/architecture-reference/integration.md
-    - Deployment:
-      - Deployment: architecture/deployment/index.md
-      - Deployment Options:
-        - Deployment Options: architecture/deployment/deployment-options.md
-        - All-in-one Deployment: architecture/deployment/all-in-one-deployment.md
-        - High Availability Deployment:  architecture/deployment/ha-deployment.md
-      - Components Deployment:
-        - Components Deployment: architecture/deployment/components-deployment.md
-        - Web Portal: architecture/deployment/web-portal.md
-        - Proxy (API Routing): architecture/deployment/proxy.md
-        - Core: architecture/deployment/core.md
-        - Job Service: architecture/deployment/job-service.md
-        - Registry: architecture/deployment/registry.md
-        - Tivy: architecture/deployment/trivy.md
-        - K-V storage: architecture/deployment/k-v-storage.md
-        - SQL Database: architecture/deployment/sql-database.md
-      - Deployment Resources:
-        - Deployment Resources: architecture/deployment/deployment-resources.md
-        - Harbor Helm Chart: architecture/deployment/harbor-helm-chart.md
-        - Redis Helm Chart: architecture/deployment/redis-helm-chart.md
-        - PostgreSQL Helm Chart: architecture/deployment/postgresql-helm-chart.md
-      - Interact with MSR: architecture/deployment/interact-with-msr-registry.md
-    - System Requirements: architecture/system-reqs.md
-    - Storage: architecture/storage.md
-    - Networking: architecture/networking.md
-    - Security:
-       - Security: architecture/security/index.md
-       - Kubernetes Security: architecture/security/kubernetes-security.md
-       - Harbor Security: architecture/security/harbor-security.md
-       - K-V Storage (Redis) Security: architecture/security/kv-storage-redis-security.md
-       - DB Service (PostgreSQL) Security: architecture/security/db-service-security.md
-       - Logging and Monitoring: architecture/security/logging-and-monitoring.md
-       - Supply Chain: architecture/security/supply-chain.md
-  - Installation Guide:
-    - Installation Guide: installation/index.md
-    - Prepare MKE for MSR Installation: installation/prepare-mke-for-msr-install.md
-    - Prerequisites: installation/msr-system-reqs.md
-    - Install MSR with High Availability:
-        - Install MSR with High Availability: installation/installation-with-high-availability/index.md
-        - Prerequisites: installation/installation-with-high-availability/ha-prerequisites.md
-        - Install Helm: installation/installation-with-high-availability/ha-install-helm.md
-        - Create PVC across Kubernetes workers: installation/installation-with-high-availability/ha-create-pvc-across-kubernetes-workers.md
-        - Install Highly Available PostgreSQL: installation/installation-with-high-availability/ha-install-and-set-up-postgresql.md
-        - Install Highly Available Redis: installation/installation-with-high-availability/ha-install-highly-available-redis.md
-        - Install Highly Available MSR: installation/installation-with-high-availability/install-ha-msr.md
-    - Install MSR single host using Docker Compose:
-        - Install MSR single host using Docker Compose: installation/msr-docker-install/index.md
-        - Prerequisites: installation/msr-docker-install/docker-compose-prerequisites.md
-        - Install MSR using Docker Compose: installation/msr-docker-install/docker-compose-install.md
-        - Manage MSR with Docker Compose: installation/msr-docker-install/manage-with-docker-compose.md
-    - Install MSR single host using Helm:
-        - Install MSR single host using Helm: installation/msr-helm-install/index.md
-        - Prerequisites: installation/msr-helm-install/helm-prerequisites.md
-        - Install Helm: installation/msr-helm-install/helm-install.md
-        - Create PVC across Kubernetes workers: installation/msr-helm-install/helm-storage.md
-        - Install standalone MSR: installation/msr-helm-install/helm-install-msr.md
-  - Operations Guide:
-    - Operations Guide: operations/index.md
-    - Authentication Configuration:
-      - Authentication Configuration: operations/authentication-configuration/index.md
-      - LDAP Authentication: operations/authentication-configuration/ldap-authentication.md
-      - OIDC Authentication: operations/authentication-configuration/oidc-authentication.md
-      - Database Authentication: operations/authentication-configuration/database-authentication.md
-    - Configuring Replication: operations/configuring-replication.md
-    - Configuring Webhooks: operations/configuring-webhooks.md
-    - Log Rotation in Mirantis Secure Registry: operations/log-rotation.md
-    - Managing Garbage Collection: operations/managing-garbage-collection.md
-    - Managing Project Permissions: operations/managing-project-permissions.md
-    - Managing Tag Retention Rules: operations/managing-tag-retention-rules.md
-    - Metrics Collection and Visualization: operations/metrics.md
-    - Mirror Images: operations/mirror-images.md
-    - Proxy Caches:
-      - Proxy Caches: operations/proxy-caches/index.md
-      - Proxy cache prerequisites: operations/proxy-caches/proxy-cache-prerequisites.md
-      - Proxy cache deployment scenario: operations/proxy-caches/proxy-cache-deployment-scenario.md
-      - Deploy a proxy cache: operations/proxy-caches/deploy-proxy-cache.md
-    - Signing Artifacts with Cosign: operations/signing-artifacts-with-cosign.md
-    - Troubleshoot MSR:
-      - Troubleshoot MSR: operations/tshoot/index.md
-      - CPU throttling: operations/tshoot/cpu-throttling.md
-      - Instability during bulk replication: operations/tshoot/instability-during-bulk-replication.md
-      - MSR installation may fail on RHEL 9.4 and later: operations/tshoot/rhel-9-4.md
-    - Upgrade Guide: operations/upgrade.md
-    - Vulnerability Scanning: operations/vulnerability-scanning.md
-  - Tutorials:
-    - Tutorials: tutorials/index.md
-    - Setup for MSR with Entra ID OIDC authentication:
-      - Setup for MSR with Entra ID OIDC authentication: tutorials/setup-for-msr-with-entra-id-oidc-authentication/index.md
-      - Install MSR: tutorials/setup-for-msr-with-entra-id-oidc-authentication/install-msr.md
-      - Set up Entra ID: tutorials/setup-for-msr-with-entra-id-oidc-authentication/set-up-entra-id.md
-      - Configure MSR for OIDC authentication: tutorials/setup-for-msr-with-entra-id-oidc-authentication/configure-msr-for-oidc-authentication.md
-      - Configure OIDC group mapping: tutorials/setup-for-msr-with-entra-id-oidc-authentication/configure-oidc-group-mapping.md
-      - Inspect OIDC responses: tutorials/setup-for-msr-with-entra-id-oidc-authentication/inspect-oidc-responses.md
-  - Backup Guide:
-    - Backup Guide: backup/index.md
-    - Velero Installation: backup/velero-installation.md
-    - HA Backup:
-      - HA Backup: backup/ha-backup/ha-backup.md
-      - File System Backup vs Snapshot Backup: backup/ha-backup/system-backup-vs-snapshot-backup.md
-      - Best Backup practices: backup/ha-backup/best-backup-practises.md
-      - Monitoring Backup and Restore Status: backup/ha-backup/monitoring-backup-and-restore-status.md
-      - Filesystem-Level Backups with Velero: backup/ha-backup/filesystem-level-backups-with-velero.md
-      - Snapshot Backups with Velero: backup/ha-backup/snapshot-backups-with-velero.md
-      - Schedule Backups and Restores: backup/ha-backup/automating-and-scheduling.md
-    - Single Instance Backup: backup/instance-backup.md
-    - Disaster Recovery:
-      - Disaster Recovery: backup/disaster-recovery/index.md
-      - NFS Metadata Restore:
-        - NFS Metadata Restore: backup/disaster-recovery/nfs-metadata-restore/index.md
-        - Install MinIO and Velero: backup/disaster-recovery/nfs-metadata-restore/metadata-install-minio-and-velero.md
-        - Backup and Restore: backup/disaster-recovery/nfs-metadata-restore/metadata-restore-backup.md
-      - NFS Full Restore:
-        - NFS Full Restore: backup/disaster-recovery/nfs-full-restore/index.md
-        - Install MinIO and Velero: backup/disaster-recovery/nfs-full-restore/full-install-minio-and-velero.md
-        - Backup and Restore: backup/disaster-recovery/nfs-full-restore/full-restore-backup.md
-  - Migration Guide:
-    - Migration Guide: migration/index.md
-    - Manual Migration:
-      - Manual Migration: migration/manual-migration/index.md
-      - Manual Migration Prerequisites: migration/manual-migration/manual-migration-prerequisites.md
-      - Perform Migration: migration/manual-migration/migrate-msr.md
-      - Post-Migration Configuration: migration/manual-migration/manual-configure-migration.md
-    - Tool Migration:
-      - Tool Migration: migration/tool-migration/index.md
-      - What to Expect During the Migration: migration/tool-migration/what-to-expect-when-transitioning.md
-      - Migration Prerequisites: migration/tool-migration/migration-prerequisites.md
-      - Install Migration Tool: migration/tool-migration/install-migration-tool.md
-      - Database Access Configuration: migration/tool-migration/db-configuration.md
-      - Configure Migration Settings: migration/tool-migration/configure-migration-settings.md
-      - Perform Migration:
-        - Perform Migration: migration/tool-migration/perform-tool-migration.md
-        - Migrate Projects: migration/tool-migration/partial-tool-migration/migrate-projects.md
-        - Migrate Permissions: migration/tool-migration/partial-tool-migration/migrate-permissions.md
-        - Migrate Push and Poll Mirroring Policies: migration/tool-migration/partial-tool-migration/migrate-push-poll-mirroring-policies.md
-      - Validate Migration Data: migration/tool-migration/validate-migration-data.md
-      - Post-Migration Configuration: migration/tool-migration/tool-configure-migration.md
-      - Post-Migration Cleanup: migration/tool-migration/clean-up-after-migration.md
-      - Migration Tool Reference:
-        - Migration Tool Reference: migration/tool-migration/migration-tool-reference/index.md
-        - Command Reference: migration/tool-migration/migration-tool-reference/command-reference.md
-        - Configuration Reference: migration/tool-migration/migration-tool-reference/configuration-reference.md
-      - Migration Tool Release Notes:
-        - Migration Tool Release Notes: migration/tool-migration/migration-tool-release-notes/index.md
-        - Migration Tool 1.4.0: migration/tool-migration/migration-tool-release-notes/1-4-0.md
-        - Migration Tool 1.3.0: migration/tool-migration/migration-tool-release-notes/1-3-0.md
-        - Migration Tool 1.2.0: migration/tool-migration/migration-tool-release-notes/1-2-0.md
-        - Migration Tool 1.1.0: migration/tool-migration/migration-tool-release-notes/1-1-0.md
-        - Migration Tool 1.0.1: migration/tool-migration/migration-tool-release-notes/1-0-1.md
-        - Migration Tool 1.0.0: migration/tool-migration/migration-tool-release-notes/1-0-0.md
-  - Release Notes:
-    - Release Notes: release-notes/index.md
-    - 4.13.4:
-      - 4.13.4: release-notes/4-13-4/index.md
-      - Changelog: release-notes/4-13-4/changelog.md
-      - Security information: release-notes/4-13-4/security-information.md
-    - 4.13.3:
-      - 4.13.3: release-notes/4-13-3/index.md
-      - Changelog: release-notes/4-13-3/changelog.md
-      - Security information: release-notes/4-13-3/security-information.md
-    - 4.13.2:
-      - 4.13.2: release-notes/4-13-2/index.md
-      - Changelog: release-notes/4-13-2/changelog.md
-      - Security information: release-notes/4-13-2/security-information.md
-    - 4.13.1:
-      - 4.13.1: release-notes/4-13-1/index.md
-      - Changelog: release-notes/4-13-1/changelog.md
-      - Security information: release-notes/4-13-1/security-information.md
-    - 4.13.0:
-      - 4.13.0: release-notes/4-13-0/index.md
-      - Changelog: release-notes/4-13-0/changelog.md
-      - Security information: release-notes/4-13-0/security-information.md
-  - Release Compatibility Matrix: compat-matrix.md
-  - Release Cadence and Support Lifecycle: release-cadence-and-support-cycle.md
-  - Support, Services, Contact:
-    - Overview: support/index.md
-    - Collect support bundles on MKE clusters: support/collect-support-bundles-on-mke-clusters.md
-    - Get support: https://www.mirantis.com/support/enterprise-support-services/
-    - Mirantis CloudCare Portal: https://support.mirantis.com/s/login/
-    - Contact us: https://www.mirantis.com/contact/
-  - '<span class="nav-deco">Previous Versions</span>': []
-  - MSR 2.9: https://docs.mirantis.com/msr/2.9/overview.html
-
+  - Home: index.md
 
 markdown_extensions:
   - admonition
@@ -301,13 +84,8 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.tasklist
-#  - pymdownx.extra
-  - admonition
 
 extra:
-  # repo_url: https://github.com/Mirantis/msr-docs
-  # docs_repo_name: Mirantis/docs
-  # generator: false
   base_url: ""
   social:
     - icon: fontawesome/brands/x-twitter
@@ -325,9 +103,3 @@ extra:
   version:
     provider: mike
     default: stable
-
-    # Global variables
-
-  latest_msr_4_13_tag: '4.13.2'
-  latest_msr_4_0_tag: '4.0.2'
-  latest_mke_tag: '3.8.8'

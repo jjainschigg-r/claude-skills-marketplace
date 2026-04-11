@@ -1,51 +1,35 @@
-name: Build MSR docs
+name: Publish to web server
+
 on:
-  #page_build:
   workflow_call:
     secrets:
       DOCS_SSH_KEY:
-        required: true  
+        required: true
   workflow_dispatch:
+
 jobs:
-  build_docs:
-    name: "Build MSR docs"
-    runs-on: arc-runner-set-mirantis-private
+  publish:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout docs
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
-          repository: Mirantis/msr-docs
-          path: msr
 
-      - name: Publish docs
-        id: publish
+      - name: Rsync to web server
         env:
-          BRANCHES: 'next latest stable 4.13 4.0'
-          # FILES: root-level files rsynced individually (not branch directories).
-          # robots.txt and sitemap.xml are written to gh-pages root by deploy-docs-warnings.yml
-          # so that AI crawlers and search engines can discover and index the docs.
-          FILES: 'versions.json index.html robots.txt sitemap.xml'
-          GH_TOKEN: ${{ github.token }}
           DOCS_SSH_KEY_ED25519: ${{ secrets.DOCS_SSH_KEY }}
-          DOCS_ROOT: '/var/www/msr/'
+          DOCS_ROOT: '/var/www/claude-skills/'
           DOCS_USER: 'k0rdent-docs'
           DOCS_HOST: '54.82.205.222'
-        shell: bash
         run: |
-          #!/bin/bash -ex
-          sudo apt-get update
+          sudo apt-get update -qq
           sudo apt-get install -y rsync
           mkdir -p ~/.ssh/
-          echo $DOCS_SSH_KEY_ED25519 | base64 -di > ~/.ssh/id_rsa_ed25519
+          echo "$DOCS_SSH_KEY_ED25519" | base64 -di > ~/.ssh/id_rsa_ed25519
           chmod 600 ~/.ssh/id_rsa_ed25519
-          ssh-keygen -l -f ~/.ssh/id_rsa_ed25519
-          export SSH_OPTS=(-o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null")
-          for file in ${FILES} ; do
-            rsync -rv -e "ssh ${SSH_OPTS[*]} -i ~/.ssh/id_rsa_ed25519" msr/$file "${DOCS_USER}@${DOCS_HOST}:${DOCS_ROOT}"
-          done
-          for branch in ${BRANCHES} ; do
-            DOCS_PATH="${DOCS_USER}@${DOCS_HOST}:${DOCS_ROOT}${branch}"
-            echo ${DOCS_PATH}
-            rsync -rv --delete -e "ssh ${SSH_OPTS[*]} -i ~/.ssh/id_rsa_ed25519" msr/${branch}/ "${DOCS_PATH}/"
-          done
+          SSH_OPTS=(-o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null")
+          rsync -rv --delete \
+            -e "ssh ${SSH_OPTS[*]} -i ~/.ssh/id_rsa_ed25519" \
+            ./ "${DOCS_USER}@${DOCS_HOST}:${DOCS_ROOT}"

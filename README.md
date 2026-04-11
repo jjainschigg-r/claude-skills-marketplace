@@ -1,4 +1,4 @@
-# Mirantis Secure Registry 4 Documentation
+# Claude Skills Marketplace
 
 This project utilises Mkdocs with the Material theme and Mermaid for
 diagrams. Currently the docs are published using github actions on github pages
@@ -14,43 +14,45 @@ to docs, it can be useful to host it locally to see the effect of changes.
     dockerfile                # Docker manifest for locally serving the site through a container (alternative to locally installing mkdocs)
     docs/                     # Documentation files in Markdown (.md), subfolders for /img, /assets, /stylesheets, /css, etc.
 
-## Setting up MKdocs locally (Linux)
+## Setting up and serving MkDocs locally (Linux)
+
+A `Makefile` in the repo root handles setup and serving for you. You don't need to manually create a venv, activate it, or install requirements.
 
 1. Clone repo and cd to its root:
 
     ```bash
-    git clone https://github.com/mirantis-docs/k0rdent-enterprise-docs.git
-    cd k0rdent-enterprise-docs
-    ```
-    
-2. Setup a Python venv and activate it
-
-    ```bash
-    python3 -m venv ./mkdocs
-    source ./mkdocs/bin/activate
+    git clone git@github.com:jjainschigg-r/claude-skills-marketplace.git
+    cd claude-skills-marketplace
     ```
 
-3. Install MkDocs and dependencies from requirements.txt
+2. See available make targets:
 
     ```bash
-    pip install -r requirements.txt
+    make help
     ```
 
-4. Create a feature branch, copying main (next docs) or a version branch (e.g., release-v0.1.0) you want to update
+3. Serve the site to 127.0.0.1:8000 (auto-runs setup if needed, live-reloads on file changes):
 
     ```bash
-    git checkout main                     # or release-v0.1.0 etc. - check out the branch you want to update
-    git pull origin main                  # or release-v0.1.0 etc. - update from origin
-    git checkout -b my-feature-branch     # copy the original branch into your feature branch
+    make serve
+    ```
+
+    That's it. `make serve` will create the venv and install all dependencies from `requirements.txt` automatically if they aren't already present.
+
+4. Create a feature branch for your changes:
+
+    ```bash
+    git checkout main
+    git pull origin main
+    git checkout -b my-feature-branch
     (make changes)
     git push -u origin my-feature-branch  # push to origin and file Pull Request
     ```
-      
-5. Serve site to 127.0.0.1:8000 (server is live-reloading, so see effects of changes immediately)
+
+5. To clean up the local venv:
 
     ```bash
-    git checkout my-feature-branch        # check out your feature branch
-    mkdocs serve                          # serve docs from that feature branch
+    make clean
     ```
 
 ## Use containerized mkdocs instead (assumes you have Docker installed locally)
