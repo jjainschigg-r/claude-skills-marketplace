@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "source": {
         "source": "git-subdir",
-        "url": "git@github.com:jjainschigg-r/claude-skills-marketplace.git",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
         "path": "plugins/example-skill"
       }
     }
