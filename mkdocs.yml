@@ -59,6 +59,8 @@ plugins:
 
 nav:
   - Home: index.md
+  - Skills:
+    - example-skill: skills/example-skill.md
 
 markdown_extensions:
   - admonition
