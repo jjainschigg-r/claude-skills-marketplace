@@ -17,7 +17,7 @@ You need **Claude Code** installed and running. If you haven't done that yet, as
 Add the Mirantis skills marketplace to your Claude Code installation. Open a terminal, start Claude Code, and run:
 
 ```
-/plugin marketplace add https://ai.mirantis.com/claude-skills/marketplace.json
+/plugin marketplace add https://jjainschigg-r.github.io/claude-skills-marketplace/marketplace.json
 ```
 
 You only need to do this once. Claude Code will remember it.
