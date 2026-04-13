@@ -5,6 +5,26 @@
   },
   "plugins": [
     {
+      "name": "example-mcp-node-skill",
+      "description": "Demonstrates a skill backed by a Node.js MCP server with an external dependency.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/example-mcp-node-skill"
+      }
+    },
+    {
+      "name": "example-mcp-python-skill",
+      "description": "Demonstrates a skill backed by a Python MCP server with an external dependency.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/example-mcp-python-skill"
+      }
+    },
+    {
       "name": "example-skill",
       "description": "Placeholder skill to validate the marketplace pipeline.",
       "version": "1.0.0",

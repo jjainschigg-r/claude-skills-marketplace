@@ -12,8 +12,10 @@
         <meta name="author" content="Mirantis, Inc.">
       
       
-        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/common/configure-migration/">
+        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/skills/example-mcp-node-skill/">
       
+      
+        <link rel="prev" href="../example-mcp-python-skill/">
       
       
       
@@ -22,7 +24,7 @@
     
     
       
-        <title>Post-Migration Configuration - Claude Skills Marketplace</title>
+        <title>example-mcp-node-skill - Claude Skills Marketplace</title>
       
     
     
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#post-migration-configuration" class="md-skip">
+        <a href="#example-mcp-node-skill" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Post-Migration Configuration
+              example-mcp-node-skill
             
           </span>
         </div>
@@ -256,8 +258,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -270,11 +274,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -288,7 +292,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Skills
@@ -302,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../skills/example-skill/" class="md-nav__link">
+      <a href="../example-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -323,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../skills/example-mcp-python-skill/" class="md-nav__link">
+      <a href="../example-mcp-python-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -341,10 +345,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../skills/example-mcp-node-skill/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    example-mcp-node-skill
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -353,6 +377,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -392,42 +481,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pruning-policies" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Pruning Policies
+      Prerequisites
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Pruning Policies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operator-mapping-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Operator Mapping Table
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supported-msr-29-and-msr-31-rule-types-in-msr-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported MSR 2.9 and MSR 3.1 Rule Types in MSR 4
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-environment" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure Environment
+      Install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
     </span>
   </a>
   
@@ -448,207 +540,52 @@
                   
 
 
-<h1 id="post-migration-configuration">Post-Migration Configuration<a class="headerlink" href="#post-migration-configuration" title="Permanent link">#</a></h1>
-<p>After upgrading MSR, several settings will not carry over automatically.<br />
-Below are key aspects to consider after a successful migration:</p>
+<h1 id="example-mcp-node-skill">example-mcp-node-skill<a class="headerlink" href="#example-mcp-node-skill" title="Permanent link">#</a></h1>
+<p>Demonstrates a skill backed by a Node.js MCP server. When invoked, it calls a running Node.js process via the Model Context Protocol and returns a figlet ASCII art greeting. Proof of life for the Node.js MCP plugin pattern.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p><a href="https://nodejs.org/">Node.js and npm</a> must be installed. Dependencies are installed automatically into a persistent data directory on first run.</p>
+<hr />
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h2>
+<p>If you haven't added the marketplace yet:</p>
+<div class="highlight"><pre><span></span><code>/plugin marketplace add https://jjainschigg-r.github.io/claude-skills-marketplace/marketplace.json
+</code></pre></div>
+<p>Then install the skill:</p>
+<div class="highlight"><pre><span></span><code>/plugin install example-mcp-node-skill@mirantis-skills
+</code></pre></div>
+<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>/example-mcp-node-skill
+</code></pre></div>
+<p>Claude will call the <code>hello_node</code> MCP tool and return a figlet ASCII art greeting.</p>
+<hr />
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<p>On install, a Node.js MCP server starts alongside Claude Code. The server declares a <code>hello_node</code> tool. The skill's only job is to call that tool — all the Node.js logic lives in the server, not the prompt.</p>
+<p>A wrapper script (<code>run-server.sh</code>) handles dependency installation on first run, storing <code>node_modules</code> in <code>${CLAUDE_PLUGIN_DATA}</code> so they survive plugin updates. The server script is always copied fresh from the plugin on startup, so code changes take effect on reinstall.</p>
+<hr />
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Configuration area</th>
-<th>Required actions</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Project Visibility</strong></td>
-<td>Project visibility (public/private) must be configured manually. In MSR 3.x, private and public image repositories could coexist under a single organization. In MSR 4, visibility is set only at the project level. Mixed public/private repositories under one organization in MSR 3.x must be manually adjusted.</td>
+<td><strong>Version</strong></td>
+<td>1.0.0</td>
 </tr>
 <tr>
-<td><strong>Project Permissions</strong></td>
-<td>MSR 4 organizes repositories within projects. Ensure that project-level permissions are properly recreated. See: <a href="/operations/managing-project-permissions/">Managing Project Permissions</a>.</td>
+<td><strong>Runtime</strong></td>
+<td>Node.js via <code>npm</code></td>
 </tr>
 <tr>
-<td><strong>Registry Replication</strong></td>
-<td>Re-establish any replication or mirroring rules and schedules in MSR 4. See: <a href="/operations/configuring-replication/">Configuring replication</a>.</td>
+<td><strong>External dependency</strong></td>
+<td><code>figlet</code></td>
 </tr>
 <tr>
-<td><strong>Image Tag Retention</strong></td>
-<td>Manually configure existing retention policies for images in MSR 4 to ensure appropriate lifecycle management. See: <a href="/operations/managing-tag-retention-rules/">Managing Tag Retention</a>.</td>
-</tr>
-<tr>
-<td><strong>Scanning Settings</strong></td>
-<td>Configure or re-enable Trivy image scanning policies. See: <a href="/operations/vulnerability-scanning/">Vulnerability Scanning</a>.</td>
-</tr>
-<tr>
-<td><strong>Audit Logs</strong></td>
-<td>Set up logging mechanisms in MSR 4 for compliance. See: <a href="/operations/log-rotation/">Log Rotation in Mirantis Secure Registry</a>.</td>
-</tr>
-<tr>
-<td><strong>Webhooks</strong></td>
-<td>Recreate and configure webhooks to point to MSR 4. See: <a href="/operations/configuring-webhooks/">Configuring Webhooks</a>.</td>
-</tr>
-<tr>
-<td><strong>CI/CD Pipelines</strong></td>
-<td>Update custom CI/CD pipelines to reference MSR 4.</td>
-</tr>
-<tr>
-<td><strong>Signed Images</strong></td>
-<td>Reconfigure image signing using Cosign. See: <a href="/operations/signing-artifacts-with-cosign/">Signing Artifacts with Cosign</a>.</td>
-</tr>
-<tr>
-<td><strong>Garbage Collection Settings</strong></td>
-<td>Manually reconfigure garbage collection policies in MSR 4. See: <a href="/operations/managing-garbage-collection/">Managing Garbage Collection</a>.</td>
-</tr>
-<tr>
-<td><strong>Certificate Management</strong></td>
-<td>Re-establish custom certificate configurations in MSR 4.</td>
-</tr>
-<tr>
-<td><strong>API Updates</strong></td>
-<td>Update API endpoints and account for changes in MSR 4's API.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="pruning-policies">Pruning Policies<a class="headerlink" href="#pruning-policies" title="Permanent link">#</a></h2>
-<p>Pruning behavior in MSR 4 differs fundamentally from earlier versions.<br />
-While previous releases used pruning policies to remove images that matched defined criteria,<br />
-MSR 4 introduces retention policies, which are based on preserving images that meet certain tag patterns.</p>
-<p>Use the mapping guide below to manually translate existing pruning rules into MSR 4 retention policies.</p>
-<h3 id="operator-mapping-table">Operator Mapping Table<a class="headerlink" href="#operator-mapping-table" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Operator Name</th>
-<th>MSR 2.9 / MSR 3.1 Pruning Operator</th>
-<th>Regex Equivalent</th>
-<th>MSR 2.9 / MSR 3.1 → MSR 4 Translation (Prune = Not Retain)</th>
-<th>MSR 4 Time Frame (<code>template</code> field)</th>
-<th>MSR 4 Conversion to "doublestar" kind</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>equals</td>
-<td>eq</td>
-<td>matching + exact value</td>
-<td>P if equal value = NOT R if equal value = exclude x if equal value</td>
-<td>always</td>
-<td>use exact value</td>
-</tr>
-<tr>
-<td>starts with</td>
-<td>sw</td>
-<td>matching + "^" + value + "*"</td>
-<td>exclude x if starts with value</td>
-<td>always</td>
-<td><code>value*</code></td>
-</tr>
-<tr>
-<td>ends with</td>
-<td>ew</td>
-<td>matching + "*" + value + "$"</td>
-<td>exclude x if ends with value</td>
-<td>always</td>
-<td><code>*value</code></td>
-</tr>
-<tr>
-<td>contains</td>
-<td>c</td>
-<td>matching + "" + value + ""</td>
-<td>exclude x if contains value</td>
-<td>always</td>
-<td><code>\value\</code></td>
-</tr>
-<tr>
-<td>one of</td>
-<td>oo</td>
-<td>matching + <code>\b(word1\|word2\|word3)\b</code></td>
-<td>exclude x if one of value</td>
-<td>always</td>
-<td>Use exact value multiple times</td>
-</tr>
-<tr>
-<td>not one of</td>
-<td>noo</td>
-<td>excluding + <code>\b(word1\|word2\|word3)\b</code></td>
-<td>match x if one of value</td>
-<td>always</td>
-<td>Use exact value multiple times</td>
-</tr>
-<tr>
-<td>matches regex</td>
-<td>matches</td>
-<td>matching + regex value</td>
-<td>exclude x if match value</td>
-<td>always</td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-<h3 id="supported-msr-29-and-msr-31-rule-types-in-msr-4">Supported MSR 2.9 and MSR 3.1 Rule Types in MSR 4<a class="headerlink" href="#supported-msr-29-and-msr-31-rule-types-in-msr-4" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>MSR 2.9 / MSR 3.1 Rule Type</th>
-<th>MSR 4 Mapping</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tag Name</td>
-<td>Tags field</td>
-</tr>
-<tr>
-<td>Component Name</td>
-<td>For repositories</td>
-</tr>
-<tr>
-<td>All CVSS 3 vulnerabilities</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Critical CVSS 3 vulnerabilities</td>
-<td>None</td>
-</tr>
-<tr>
-<td>High CVSS 3 vulnerabilities</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Medium CVSS 3 vulnerabilities</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Low CVSS 3 vulnerabilities</td>
-<td>None</td>
-</tr>
-<tr>
-<td>License name</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Last updated at</td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-<h2 id="configure-environment">Configure Environment<a class="headerlink" href="#configure-environment" title="Permanent link">#</a></h2>
-<p>The following infrastructure components require manual updates to align with the new MSR setup:</p>
-<table>
-<thead>
-<tr>
-<th>Infrastructure Component</th>
-<th>Required Actions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CI/CD Pipelines</strong></td>
-<td>Update custom CICD pipelines to leverage the new environments.</td>
-</tr>
-<tr>
-<td><strong>DNS</strong></td>
-<td>Update DNS CNAMEs to point to the new hosts after migration.</td>
+<td><strong>Maintained by</strong></td>
+<td>Mirantis</td>
 </tr>
 </tbody>
 </table>
