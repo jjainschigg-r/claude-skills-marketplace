@@ -72,6 +72,27 @@ Then reinstall any skills you want to update.
 
 ---
 
+## Plugin Dev Tools
+
+If you are building a plugin, use the Plugin Dev Tools. These are fully-validated platform skills that encode the standards and review criteria used by marketplace curators — so you can catch and fix problems before filing a PR, and submit with confidence.
+
+| Tool | What it does |
+|---|---|
+| `/plugin-scaffold` | Generate a correct plugin structure from a description |
+| `/plugin-docs-lint` | Check your README against documentation standards |
+| `/plugin-security-check` | Deep inspection: compliance, security, blast radius, documentation quality |
+| `/submit-plugin` | Full PR submission: runs the security check, clones the repo, files the PR |
+
+Install any of them with:
+
+```
+/plugin install <tool-name>@mirantis-skills
+```
+
+We encourage everyone building plugins to use these tools. The security check runs automatically as part of submission, and its report is included in every PR for reviewers.
+
+---
+
 ## Contribute a skill
 
-Built something useful? The skills in this marketplace are maintained in a shared repository. Reach out to your team lead or open a pull request — the more skills we share, the less we each have to reinvent.
+Built something useful? The skills in this marketplace are maintained in a shared repository. Use `/submit-plugin` to file a PR — the more skills we share, the less we each have to reinvent.

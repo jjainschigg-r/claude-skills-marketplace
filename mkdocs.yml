@@ -60,7 +60,13 @@ plugins:
 nav:
   - Home: index.md
   - Plugin Dev Tools:
-    - skills/plugin-dev-tools/index.md
+    - Overview: skills/plugin-dev-tools/index.md
+    - plugin-security-check: skills/plugin-dev-tools/plugin-security-check.md
+    - submit-plugin: skills/plugin-dev-tools/submit-plugin.md
+    - plugin-scaffold: skills/plugin-dev-tools/plugin-scaffold.md
+    - plugin-docs-lint: skills/plugin-dev-tools/plugin-docs-lint.md
+    - plugin-diff: skills/plugin-dev-tools/plugin-diff.md
+    - validate-marketplace: skills/plugin-dev-tools/validate-marketplace.md
   - General Purpose Skills:
     - markdown-doc-cleaner: skills/markdown-doc-cleaner.md
   - Example Plugins:
