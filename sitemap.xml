@@ -24,4 +24,28 @@
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-diff/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-docs-lint/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-scaffold/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-security-check/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/submit-plugin/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/validate-marketplace/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
 </urlset>

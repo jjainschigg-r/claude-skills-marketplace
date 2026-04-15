@@ -12,26 +12,28 @@
         <meta name="author" content="Mirantis, Inc.">
       
       
-        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/">
+        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-diff/">
       
       
+        <link rel="prev" href="../plugin-docs-lint/">
       
-        <link rel="next" href="skills/plugin-dev-tools/">
+      
+        <link rel="next" href="../validate-marketplace/">
       
       
-      <link rel="icon" href="assets/msr-fav.png">
+      <link rel="icon" href="../../../assets/msr-fav.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Claude Skills Marketplace</title>
+        <title>plugin-diff - Claude Skills Marketplace</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +52,13 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/nav-decor.css">
+      <link rel="stylesheet" href="../../../stylesheets/nav-decor.css">
     
-      <link rel="stylesheet" href="stylesheets/external-link.css">
+      <link rel="stylesheet" href="../../../stylesheets/external-link.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#claude-skills-marketplace" class="md-skip">
+        <a href="#plugin-diff" class="md-skip">
           Skip to content
         </a>
       
@@ -102,9 +104,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Claude Skills Marketplace" class="md-header__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
+    <a href="../../.." title="Claude Skills Marketplace" class="md-header__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
       
-  <img src="assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              plugin-diff
             
           </span>
         </div>
@@ -224,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Claude Skills Marketplace" class="md-nav__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
+    <a href="../../.." title="Claude Skills Marketplace" class="md-nav__button md-logo" aria-label="Claude Skills Marketplace" data-md-component="logo">
       
-  <img src="assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     Claude Skills Marketplace
@@ -236,6 +238,175 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Plugin Dev Tools
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Plugin Dev Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-security-check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-security-check
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submit-plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    submit-plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-scaffold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-scaffold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-docs-lint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-docs-lint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -254,18 +425,18 @@
           
   
   <span class="md-ellipsis">
-    Home
+    plugin-diff
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Home
+    plugin-diff
   </span>
   
 
@@ -287,72 +458,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Install
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-time-setup" class="md-nav__link">
+  <a href="#use" class="md-nav__link">
     <span class="md-ellipsis">
-      One-time setup
+      Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#browse-available-skills" class="md-nav__link">
+  <a href="#what-it-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      Browse available skills
+      What it covers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-a-skill" class="md-nav__link">
+  <a href="#output" class="md-nav__link">
     <span class="md-ellipsis">
-      Install a skill
+      Output
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-a-skill" class="md-nav__link">
+  <a href="#details" class="md-nav__link">
     <span class="md-ellipsis">
-      Use a skill
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-skills-up-to-date" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keep skills up to date
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-dev-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plugin Dev Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contribute-a-skill" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contribute a skill
+      Details
     </span>
   </a>
   
@@ -365,68 +509,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="skills/plugin-dev-tools/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Plugin Dev Tools
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Plugin Dev Tools
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
             
               
@@ -436,112 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/plugin-security-check/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    plugin-security-check
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/submit-plugin/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    submit-plugin
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/plugin-scaffold/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    plugin-scaffold
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/plugin-docs-lint/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    plugin-docs-lint
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/plugin-diff/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    plugin-diff
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/plugin-dev-tools/validate-marketplace/" class="md-nav__link">
+      <a href="../validate-marketplace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -608,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="skills/markdown-doc-cleaner/" class="md-nav__link">
+      <a href="../../markdown-doc-cleaner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="skills/example-skill/" class="md-nav__link">
+      <a href="../../example-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="skills/example-mcp-python-skill/" class="md-nav__link">
+      <a href="../../example-mcp-python-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -721,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="skills/example-mcp-node-skill/" class="md-nav__link">
+      <a href="../../example-mcp-node-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,72 +746,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Install
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-time-setup" class="md-nav__link">
+  <a href="#use" class="md-nav__link">
     <span class="md-ellipsis">
-      One-time setup
+      Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#browse-available-skills" class="md-nav__link">
+  <a href="#what-it-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      Browse available skills
+      What it covers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-a-skill" class="md-nav__link">
+  <a href="#output" class="md-nav__link">
     <span class="md-ellipsis">
-      Install a skill
+      Output
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-a-skill" class="md-nav__link">
+  <a href="#details" class="md-nav__link">
     <span class="md-ellipsis">
-      Use a skill
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-skills-up-to-date" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keep skills up to date
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-dev-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plugin Dev Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contribute-a-skill" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contribute a skill
+      Details
     </span>
   </a>
   
@@ -855,78 +805,63 @@
                   
 
 
-<h1 id="claude-skills-marketplace">Claude Skills Marketplace<a class="headerlink" href="#claude-skills-marketplace" title="Permanent link">#</a></h1>
-<p>Claude skills are ready-made capabilities that extend what Claude Code can do. Instead of explaining your workflow to Claude from scratch every time, you install a skill once and invoke it with a single command.</p>
-<p>This marketplace is where Mirantis teams share the skills they've built.</p>
+<h1 id="plugin-diff">plugin-diff<a class="headerlink" href="#plugin-diff" title="Permanent link">#</a></h1>
+<p>Produces a plain-language summary of what changed between two versions of a plugin — in both code and behavior. Useful before upgrading an installed plugin, particularly for <code>extended</code>-tier plugins where understanding changes to blast radius and external service access matters.</p>
 <hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<p>You need <strong>Claude Code</strong> installed and running. If you haven't done that yet, ask IT — setup takes about five minutes and your Mirantis credentials are all you need.</p>
-<hr />
-<h2 id="one-time-setup">One-time setup<a class="headerlink" href="#one-time-setup" title="Permanent link">#</a></h2>
-<p>Add the Mirantis skills marketplace to your Claude Code installation. Open a terminal, start Claude Code, and run:</p>
-<div class="highlight"><pre><span></span><code>/plugin marketplace add https://jjainschigg-r.github.io/claude-skills-marketplace/marketplace.json
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>/plugin install plugin-diff@mirantis-skills
 </code></pre></div>
-<p>You only need to do this once. Claude Code will remember it.</p>
-<hr />
-<h2 id="browse-available-skills">Browse available skills<a class="headerlink" href="#browse-available-skills" title="Permanent link">#</a></h2>
-<p>To see what's available:</p>
-<div class="highlight"><pre><span></span><code>/plugin list
+<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>/plugin-diff
 </code></pre></div>
+<p>Claude will ask for two plugin folders to compare (or a plugin name to compare your installed version against the latest in the marketplace).</p>
 <hr />
-<h2 id="install-a-skill">Install a skill<a class="headerlink" href="#install-a-skill" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>/plugin install &lt;skill-name&gt;@mirantis-skills
-</code></pre></div>
-<p>Replace <code>&lt;skill-name&gt;</code> with the name of the skill you want. For example:</p>
-<div class="highlight"><pre><span></span><code>/plugin install example-skill@mirantis-skills
-</code></pre></div>
+<h2 id="what-it-covers">What it covers<a class="headerlink" href="#what-it-covers" title="Permanent link">#</a></h2>
+<p><strong>Behavioral changes</strong></p>
+<ul>
+<li>Changes to what the skill does (SKILL.md diff summarized in plain language)</li>
+<li>New or removed MCP tools</li>
+<li>New or removed external services or endpoints contacted</li>
+<li>Changes to what files or systems the plugin can access</li>
+</ul>
+<p><strong>Security posture changes</strong></p>
+<ul>
+<li>New permissions or capabilities added</li>
+<li>Changes to blast radius (scope of files touched, services called)</li>
+<li>Dependency additions, removals, or version changes</li>
+</ul>
+<p><strong>Format changes</strong></p>
+<ul>
+<li>Fields added or removed from <code>plugin.json</code></li>
+<li>Changes to MCP server configuration</li>
+</ul>
+<p><strong>Documentation changes</strong></p>
+<ul>
+<li>Sections added, removed, or materially rewritten in <code>README.md</code></li>
+</ul>
 <hr />
-<h2 id="use-a-skill">Use a skill<a class="headerlink" href="#use-a-skill" title="Permanent link">#</a></h2>
-<p>Once installed, invoke a skill by typing <code>/</code> followed by its name:</p>
-<div class="highlight"><pre><span></span><code>/example-skill
-</code></pre></div>
-<p>Claude Code will run the skill in the context of whatever you're working on.</p>
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">#</a></h2>
+<p>A structured summary organized by category, written for a non-technical reader where possible. The goal is to answer the question: <em>"Is it safe and worthwhile to upgrade?"</em></p>
 <hr />
-<h2 id="keep-skills-up-to-date">Keep skills up to date<a class="headerlink" href="#keep-skills-up-to-date" title="Permanent link">#</a></h2>
-<p>When new skills are added or existing ones are updated, refresh your local list:</p>
-<div class="highlight"><pre><span></span><code>/plugin marketplace update mirantis-skills
-</code></pre></div>
-<p>Then reinstall any skills you want to update.</p>
-<hr />
-<h2 id="plugin-dev-tools">Plugin Dev Tools<a class="headerlink" href="#plugin-dev-tools" title="Permanent link">#</a></h2>
-<p>If you are building a plugin, use the Plugin Dev Tools. These are fully-validated platform skills that encode the standards and review criteria used by marketplace curators — so you can catch and fix problems before filing a PR, and submit with confidence.</p>
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Tool</th>
-<th>What it does</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/plugin-scaffold</code></td>
-<td>Generate a correct plugin structure from a description</td>
+<td><strong>Version</strong></td>
+<td>1.0.0</td>
 </tr>
 <tr>
-<td><code>/plugin-docs-lint</code></td>
-<td>Check your README against documentation standards</td>
-</tr>
-<tr>
-<td><code>/plugin-security-check</code></td>
-<td>Deep inspection: compliance, security, blast radius, documentation quality</td>
-</tr>
-<tr>
-<td><code>/submit-plugin</code></td>
-<td>Full PR submission: runs the security check, clones the repo, files the PR</td>
+<td><strong>Maintained by</strong></td>
+<td>Mirantis AI team</td>
 </tr>
 </tbody>
 </table>
-<p>Install any of them with:</p>
-<div class="highlight"><pre><span></span><code>/plugin install &lt;tool-name&gt;@mirantis-skills
-</code></pre></div>
-<p>We encourage everyone building plugins to use these tools. The security check runs automatically as part of submission, and its report is included in every PR for reviewers.</p>
-<hr />
-<h2 id="contribute-a-skill">Contribute a skill<a class="headerlink" href="#contribute-a-skill" title="Permanent link">#</a></h2>
-<p>Built something useful? The skills in this marketplace are maintained in a shared repository. Use <code>/submit-plugin</code> to file a PR — the more skills we share, the less we each have to reinvent.</p>
 
 
 
@@ -1013,12 +948,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
-        <script src="javascripts/plausible.js"></script>
+        <script src="../../../javascripts/plausible.js"></script>
       
     
   </body>

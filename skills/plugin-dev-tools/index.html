@@ -18,7 +18,7 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../markdown-doc-cleaner/">
+        <link rel="next" href="plugin-security-check/">
       
       
       <link rel="icon" href="../../assets/msr-fav.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Plugin Dev Tools - Claude Skills Marketplace</title>
+        <title>Overview - Claude Skills Marketplace</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Plugin Dev Tools
+              Overview
             
           </span>
         </div>
@@ -271,6 +271,18 @@
           
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -293,6 +305,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
@@ -302,6 +319,132 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin-security-check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-security-check
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="submit-plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    submit-plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin-scaffold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-scaffold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin-docs-lint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-docs-lint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin-diff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    plugin-diff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="validate-marketplace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    validate-marketplace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -511,6 +654,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended workflow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -525,7 +694,54 @@
 
 
 <h1 id="plugin-dev-tools">Plugin Dev Tools<a class="headerlink" href="#plugin-dev-tools" title="Permanent link">#</a></h1>
-<p>Plugin dev tools are fully-validated skills for creating, reviewing, and submitting plugins to this marketplace. Documentation for individual tools will appear here as they are released.</p>
+<p>Plugin Dev Tools are fully-validated platform skills for building, reviewing, and submitting plugins to this marketplace. They are maintained by the Mirantis AI team and are the recommended way to develop and contribute plugins.</p>
+<p>If you are building a plugin — whether for yourself, your department, or for contribution to this marketplace — start here. These tools encode the standards and review criteria that human curators apply when evaluating submissions, so you can catch and fix problems before filing a PR.</p>
+<hr />
+<h2 id="available-tools">Available tools<a class="headerlink" href="#available-tools" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="plugin-security-check/">plugin-security-check</a></td>
+<td>Deep inspection of a plugin folder: format compliance, security, blast radius, documentation quality</td>
+</tr>
+<tr>
+<td><a href="submit-plugin/">submit-plugin</a></td>
+<td>Full PR submission workflow: runs security check, clones repo, creates branch, files PR with review report</td>
+</tr>
+<tr>
+<td><a href="plugin-scaffold/">plugin-scaffold</a></td>
+<td>Generates a correct plugin directory structure from a description</td>
+</tr>
+<tr>
+<td><a href="plugin-docs-lint/">plugin-docs-lint</a></td>
+<td>Fast check that a plugin's README meets documentation standards</td>
+</tr>
+<tr>
+<td><a href="plugin-diff/">plugin-diff</a></td>
+<td>Plain-language summary of what changed between two versions of a plugin</td>
+</tr>
+<tr>
+<td><a href="validate-marketplace/">validate-marketplace</a></td>
+<td>Curator tool: walks all plugins in the repo and reports format or compliance issues</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recommended-workflow">Recommended workflow<a class="headerlink" href="#recommended-workflow" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Scaffold</strong> a new plugin with <code>/plugin-scaffold</code></li>
+<li>Build your skill</li>
+<li><strong>Lint</strong> the docs with <code>/plugin-docs-lint</code> as you write</li>
+<li>Run <strong><code>/plugin-security-check</code></strong> when you think it's ready</li>
+<li>Fix any BLOCKERs; review and acknowledge any WARNINGs</li>
+<li><strong>Submit</strong> with <code>/submit-plugin</code> — the security check runs again as part of the PR</li>
+</ol>
 
 
 
