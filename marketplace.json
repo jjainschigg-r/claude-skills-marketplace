@@ -43,6 +43,66 @@
         "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
         "path": "plugins/markdown-doc-cleaner"
       }
+    },
+    {
+      "name": "plugin-diff",
+      "description": "Plain-language summary of what changed between two versions of a Claude Code plugin, covering behavior, security posture, and documentation.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/plugin-diff"
+      }
+    },
+    {
+      "name": "plugin-docs-lint",
+      "description": "Fast check that a plugin's README.md meets Mirantis marketplace documentation standards.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/plugin-docs-lint"
+      }
+    },
+    {
+      "name": "plugin-scaffold",
+      "description": "Generates a complete, correctly structured Claude Code plugin directory from a plain-language description.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/plugin-scaffold"
+      }
+    },
+    {
+      "name": "plugin-security-check",
+      "description": "Deep security and compliance inspection of a Claude Code plugin folder: format, credentials, dangerous behaviors, blast radius, and documentation quality.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/plugin-security-check"
+      }
+    },
+    {
+      "name": "submit-plugin",
+      "description": "Full PR submission workflow for the Mirantis Claude Skills Marketplace: runs security check, clones repo, creates branch, and files a pull request with the full review report.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/submit-plugin"
+      }
+    },
+    {
+      "name": "validate-marketplace",
+      "description": "Curator tool: walks all plugins in a marketplace repository and reports format compliance issues, missing files, and documentation gaps.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/validate-marketplace"
+      }
     }
   ]
 }
