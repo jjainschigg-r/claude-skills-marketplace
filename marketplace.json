@@ -33,6 +33,16 @@
         "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
         "path": "plugins/example-skill"
       }
+    },
+    {
+      "name": "markdown-doc-cleaner",
+      "description": "Turns rough notes into a clean, well-structured Markdown document with headings and bullet points.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/markdown-doc-cleaner"
+      }
     }
   ]
 }
