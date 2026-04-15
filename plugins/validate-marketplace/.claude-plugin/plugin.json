@@ -1,0 +1,5 @@
+{
+  "name": "validate-marketplace",
+  "description": "Curator tool: walks all plugins in a marketplace repository and reports format compliance issues, missing files, and documentation gaps.",
+  "version": "1.0.0"
+}

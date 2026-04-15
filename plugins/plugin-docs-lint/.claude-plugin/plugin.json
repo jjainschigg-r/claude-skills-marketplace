@@ -1,0 +1,5 @@
+{
+  "name": "plugin-docs-lint",
+  "description": "Fast check that a plugin's README.md meets Mirantis marketplace documentation standards.",
+  "version": "1.0.0"
+}

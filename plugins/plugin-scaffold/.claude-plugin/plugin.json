@@ -1,0 +1,5 @@
+{
+  "name": "plugin-scaffold",
+  "description": "Generates a complete, correctly structured Claude Code plugin directory from a plain-language description.",
+  "version": "1.0.0"
+}
