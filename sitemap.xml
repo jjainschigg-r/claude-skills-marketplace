@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ai.mirantis.com/claude-skills/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://ai.mirantis.com/claude-skills/contributing/plugin-structure/</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/example-mcp-node-skill/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/example-mcp-python-skill/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/example-skill/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/markdown-doc-cleaner/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-diff/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-docs-lint/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-scaffold/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-security-check/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/submit-plugin/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/validate-marketplace/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
 </urlset>

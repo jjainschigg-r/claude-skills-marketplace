@@ -85,6 +85,16 @@
       }
     },
     {
+      "name": "smart-todo",
+      "description": "Conversational to-do list manager: paste freeform text to capture tasks, ask natural-language questions to get prioritized reports.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/smart-todo"
+      }
+    },
+    {
       "name": "submit-plugin",
       "description": "Full PR submission workflow for the Mirantis Claude Skills Marketplace: runs security check, clones repo, creates branch, and files a pull request with the full review report.",
       "version": "1.0.0",

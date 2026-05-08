@@ -12,28 +12,28 @@
         <meta name="author" content="Mirantis, Inc.">
       
       
-        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/skills/plugin-dev-tools/plugin-diff/">
+        <link rel="canonical" href="https://ai.mirantis.com/claude-skills/contributing/plugin-structure/">
       
       
-        <link rel="prev" href="../plugin-docs-lint/">
+        <link rel="prev" href="../../skills/markdown-doc-cleaner/">
       
       
-        <link rel="next" href="../validate-marketplace/">
+        <link rel="next" href="../../skills/example-skill/">
       
       
-      <link rel="icon" href="../../../assets/marketplace-mark.svg">
+      <link rel="icon" href="../../assets/marketplace-mark.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>plugin-diff - Claude Plugins Marketplace</title>
+        <title>Plugin structure - Claude Plugins Marketplace</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,13 +52,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/nav-decor.css">
+      <link rel="stylesheet" href="../../stylesheets/nav-decor.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/external-link.css">
+      <link rel="stylesheet" href="../../stylesheets/external-link.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#plugin-diff" class="md-skip">
+        <a href="#plugin-directory-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -104,9 +104,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Claude Plugins Marketplace" class="md-header__button md-logo" aria-label="Claude Plugins Marketplace" data-md-component="logo">
+    <a href="../.." title="Claude Plugins Marketplace" class="md-header__button md-logo" aria-label="Claude Plugins Marketplace" data-md-component="logo">
       
-  <img src="../../../assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              plugin-diff
+              Plugin structure
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Claude Plugins Marketplace" class="md-nav__button md-logo" aria-label="Claude Plugins Marketplace" data-md-component="logo">
+    <a href="../.." title="Claude Plugins Marketplace" class="md-nav__button md-logo" aria-label="Claude Plugins Marketplace" data-md-component="logo">
       
-  <img src="../../../assets/mirantis-logo-inverted.svg" alt="logo">
+  <img src="../../assets/mirantis-logo-inverted.svg" alt="logo">
 
     </a>
     Claude Plugins Marketplace
@@ -243,7 +243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -260,8 +260,6 @@
       
   
   
-    
-  
   
   
     
@@ -286,16 +284,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../skills/plugin-dev-tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -312,7 +310,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin Dev Tools
@@ -328,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugin-security-check/" class="md-nav__link">
+      <a href="../../skills/plugin-dev-tools/plugin-security-check/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -349,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../submit-plugin/" class="md-nav__link">
+      <a href="../../skills/plugin-dev-tools/submit-plugin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -370,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugin-scaffold/" class="md-nav__link">
+      <a href="../../skills/plugin-dev-tools/plugin-scaffold/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugin-docs-lint/" class="md-nav__link">
+      <a href="../../skills/plugin-dev-tools/plugin-docs-lint/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -409,30 +407,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    plugin-diff
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../skills/plugin-dev-tools/plugin-diff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,71 +419,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-covers" class="md-nav__link">
-    <span class="md-ellipsis">
-      What it covers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -518,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validate-marketplace/" class="md-nav__link">
+      <a href="../../skills/plugin-dev-tools/validate-marketplace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -585,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../markdown-doc-cleaner/" class="md-nav__link">
+      <a href="../../skills/markdown-doc-cleaner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,8 +523,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -620,11 +535,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -638,7 +553,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Contributing a Plugin
@@ -649,10 +564,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../contributing/plugin-structure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Plugin structure
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -661,6 +596,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-directory-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-level directory rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-scripts-non-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper scripts (non-MCP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-claude_plugin_root-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ${CLAUDE_PLUGIN_ROOT} variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-plugin-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      The plugin manifest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick checklist
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -723,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../example-skill/" class="md-nav__link">
+      <a href="../../skills/example-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../example-mcp-python-skill/" class="md-nav__link">
+      <a href="../../skills/example-mcp-python-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -765,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../example-mcp-node-skill/" class="md-nav__link">
+      <a href="../../skills/example-mcp-node-skill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,45 +822,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
+  <a href="#reference-layout" class="md-nav__link">
     <span class="md-ellipsis">
-      Install
+      Reference layout
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use" class="md-nav__link">
+  <a href="#top-level-directory-rules" class="md-nav__link">
     <span class="md-ellipsis">
-      Use
+      Top-level directory rules
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-it-covers" class="md-nav__link">
+  <a href="#helper-scripts-non-mcp" class="md-nav__link">
     <span class="md-ellipsis">
-      What it covers
+      Helper scripts (non-MCP)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
+  <a href="#the-claude_plugin_root-variable" class="md-nav__link">
     <span class="md-ellipsis">
-      Output
+      The ${CLAUDE_PLUGIN_ROOT} variable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
+  <a href="#the-plugin-manifest" class="md-nav__link">
     <span class="md-ellipsis">
-      Details
+      The plugin manifest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick checklist
     </span>
   </a>
   
@@ -872,63 +890,107 @@
                   
 
 
-<h1 id="plugin-diff">plugin-diff<a class="headerlink" href="#plugin-diff" title="Permanent link">#</a></h1>
-<p>Produces a plain-language summary of what changed between two versions of a plugin — in both code and behavior. Useful before upgrading an installed plugin, particularly for <code>extended</code>-tier plugins where understanding changes to blast radius and external service access matters.</p>
+<h1 id="plugin-directory-structure">Plugin directory structure<a class="headerlink" href="#plugin-directory-structure" title="Permanent link">#</a></h1>
+<p>Every plugin in this marketplace is a directory with a fixed structure. The plugin loader validates this structure on install — unknown top-level directories cause a load error.</p>
 <hr />
-<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>/plugin install plugin-diff@mirantis-plugins
+<h2 id="reference-layout">Reference layout<a class="headerlink" href="#reference-layout" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>&lt;plugin-name&gt;/
+├── .claude-plugin/
+│   └── plugin.json          # Required: manifest
+├── skills/
+│   └── &lt;skill-name&gt;/
+│       ├── SKILL.md         # Required: skill prompt
+│       └── scripts/         # Optional: helper scripts (non-MCP plugins)
+│           └── &lt;script&gt;.py
+├── README.md                # Required: documentation
+├── .mcp.json                # MCP plugins only
+└── server/                  # MCP plugins only
+    └── mcp_server.py        # or index.js for Node.js
 </code></pre></div>
-<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>/plugin-diff
-</code></pre></div>
-<p>Claude will ask for two plugin folders to compare (or a plugin name to compare your installed version against the latest in the marketplace).</p>
 <hr />
-<h2 id="what-it-covers">What it covers<a class="headerlink" href="#what-it-covers" title="Permanent link">#</a></h2>
-<p><strong>Behavioral changes</strong></p>
-<ul>
-<li>Changes to what the skill does (SKILL.md diff summarized in plain language)</li>
-<li>New or removed MCP tools</li>
-<li>New or removed external services or endpoints contacted</li>
-<li>Changes to what files or systems the plugin can access</li>
-</ul>
-<p><strong>Security posture changes</strong></p>
-<ul>
-<li>New permissions or capabilities added</li>
-<li>Changes to blast radius (scope of files touched, services called)</li>
-<li>Dependency additions, removals, or version changes</li>
-</ul>
-<p><strong>Format changes</strong></p>
-<ul>
-<li>Fields added or removed from <code>plugin.json</code></li>
-<li>Changes to MCP server configuration</li>
-</ul>
-<p><strong>Documentation changes</strong></p>
-<ul>
-<li>Sections added, removed, or materially rewritten in <code>README.md</code></li>
-</ul>
-<hr />
-<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">#</a></h2>
-<p>A structured summary organized by category, written for a non-technical reader where possible. The goal is to answer the question: <em>"Is it safe and worthwhile to upgrade?"</em></p>
-<hr />
-<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">#</a></h2>
+<h2 id="top-level-directory-rules">Top-level directory rules<a class="headerlink" href="#top-level-directory-rules" title="Permanent link">#</a></h2>
+<p>Only these entries are valid at the plugin root:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Entry</th>
+<th>Required</th>
+<th>When</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Version</strong></td>
-<td>1.0.0</td>
+<td><code>.claude-plugin/</code></td>
+<td>Yes</td>
+<td>Always</td>
 </tr>
 <tr>
-<td><strong>Maintained by</strong></td>
-<td>Mirantis AI team</td>
+<td><code>skills/</code></td>
+<td>Yes</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>Yes</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>.mcp.json</code></td>
+<td>No</td>
+<td>MCP plugins only</td>
+</tr>
+<tr>
+<td><code>server/</code></td>
+<td>No</td>
+<td>MCP plugins only (referenced by <code>.mcp.json</code>)</td>
+</tr>
+<tr>
+<td><code>run-server.sh</code></td>
+<td>No</td>
+<td>Node.js MCP plugins only</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Any other directory at the plugin root will cause a load error.</strong> Helper scripts, data files, and other assets that don't belong in <code>server/</code> must live inside <code>skills/&lt;skill-name&gt;/</code>.</p>
+<hr />
+<h2 id="helper-scripts-non-mcp">Helper scripts (non-MCP)<a class="headerlink" href="#helper-scripts-non-mcp" title="Permanent link">#</a></h2>
+<p>If your skill needs to run Python or Bash scripts but doesn't require an MCP server, place them inside the skill directory:</p>
+<div class="highlight"><pre><span></span><code>skills/&lt;skill-name&gt;/
+├── SKILL.md
+└── scripts/
+    └── &lt;script&gt;.py
+</code></pre></div>
+<p>Reference them in <code>SKILL.md</code> using the <code>${CLAUDE_PLUGIN_ROOT}</code> variable:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLAUDE_PLUGIN_ROOT</span><span class="si">}</span><span class="s2">/skills/&lt;skill-name&gt;/scripts/&lt;script&gt;.py&quot;</span><span class="w"> </span>&lt;args&gt;
+</code></pre></div>
+<p>This is the correct pattern for plugins that need structured data manipulation, file operations, or reusable logic — without the overhead of a full MCP server.</p>
+<hr />
+<h2 id="the-claude_plugin_root-variable">The <code>${CLAUDE_PLUGIN_ROOT}</code> variable<a class="headerlink" href="#the-claude_plugin_root-variable" title="Permanent link">#</a></h2>
+<p><code>${CLAUDE_PLUGIN_ROOT}</code> expands to the plugin's installation path at runtime (e.g. <code>~/.claude/plugins/cache/mirantis-plugins/&lt;plugin-name&gt;/1.0.0</code>). Use it whenever a <code>SKILL.md</code> or <code>.mcp.json</code> needs to reference a file bundled with the plugin.</p>
+<p>Similarly, <code>${CLAUDE_PLUGIN_DATA}</code> expands to a writable per-plugin data directory (<code>~/.claude/plugins/data/&lt;plugin-name&gt;-mirantis-plugins</code>). Use it for state that should persist across sessions — task lists, caches, user preferences.</p>
+<hr />
+<h2 id="the-plugin-manifest">The plugin manifest<a class="headerlink" href="#the-plugin-manifest" title="Permanent link">#</a></h2>
+<p><code>.claude-plugin/plugin.json</code> is required in every plugin:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plugin-name&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;One-sentence description.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For MCP plugins, add:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./.mcp.json&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="quick-checklist">Quick checklist<a class="headerlink" href="#quick-checklist" title="Permanent link">#</a></h2>
+<p>Before submitting, verify:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <code>.claude-plugin/plugin.json</code> exists with <code>name</code>, <code>description</code>, <code>version</code></li>
+<li class="task-list-item"><input type="checkbox" disabled/> <code>skills/&lt;name&gt;/SKILL.md</code> exists</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <code>README.md</code> exists</li>
+<li class="task-list-item"><input type="checkbox" disabled/> No unknown directories at the plugin root</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Helper scripts (if any) live under <code>skills/&lt;name&gt;/scripts/</code></li>
+<li class="task-list-item"><input type="checkbox" disabled/> All paths in <code>SKILL.md</code> and <code>.mcp.json</code> use <code>${CLAUDE_PLUGIN_ROOT}</code>, not hardcoded home directories</li>
+</ul>
 
 
 
@@ -1015,12 +1077,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.tracking", "toc.follow", "content.action.view", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
-        <script src="../../../javascripts/plausible.js"></script>
+        <script src="../../javascripts/plausible.js"></script>
       
     
   </body>
