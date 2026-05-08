@@ -69,6 +69,8 @@ nav:
     - validate-marketplace: skills/plugin-dev-tools/validate-marketplace.md
   - General Purpose Plugins:
     - markdown-doc-cleaner: skills/markdown-doc-cleaner.md
+  - Contributing a Plugin:
+    - Plugin structure: contributing/plugin-structure.md
   - Example Plugins:
     - example-skill: skills/example-skill.md
     - example-mcp-python-skill: skills/example-mcp-python-skill.md

@@ -7,7 +7,11 @@ Generate a new Claude Code plugin directory. Gather the following from the user 
 
 1. What the plugin should do (plain language)
 2. Plugin name — suggest a kebab-case name based on their description and confirm it
-3. Does it need an MCP server? If yes: Python (via `uv`) or Node.js (via `npm`)?
+3. Does it need external code?
+   - **No** — pure prompt/skill with no scripts
+   - **Helper scripts (no MCP)** — bundled Python or Bash scripts called from the SKILL.md
+   - **MCP server — Python** (via `uv`)
+   - **MCP server — Node.js** (via `npm`)
 4. Which tier: `platform`, `local`, or `extended`
 5. Their name or team name (for the README maintainer field)
 
@@ -45,6 +49,24 @@ Generate a complete README with these sections in order:
 - `## Use` — with the `/<plugin-name>` invocation and a brief description of what happens
 - `## How it works` — one short paragraph on the implementation approach
 - `## Details` — table with Version, Tier, and Maintained by fields
+
+---
+
+### For plugins with helper scripts (no MCP), also create:
+
+**`skills/<plugin-name>/scripts/<plugin-name>.py`** (Python) or **`skills/<plugin-name>/scripts/<plugin-name>.sh`** (Bash) — a real, self-documenting script stub based on what the user described. Include:
+
+- A module-level docstring listing all subcommands and their arguments
+- At least one meaningful subcommand stub (not just `pass`) that reflects the plugin's actual purpose
+- Argparse (Python) or `case` statement (Bash) for structured CLI invocation
+
+In the `SKILL.md`, reference the script using `${CLAUDE_PLUGIN_ROOT}`:
+
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/<plugin-name>/scripts/<plugin-name>.py" <subcommand> [args]
+```
+
+Do **not** place scripts at the plugin root — the loader only allows `skills/`, `server/`, `.claude-plugin/`, `.mcp.json`, `run-server.sh`, and `README.md` at the top level.
 
 ---
 
