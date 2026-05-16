@@ -1,0 +1,5 @@
+{
+  "name": "seo-claude-plugin",
+  "description": "Produces a complete, SEO-optimized Mirantis article from a ProductiveShop brief through a 9-step research-and-writing workflow.",
+  "version": "1.0.0"
+}

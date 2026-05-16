@@ -279,13 +279,13 @@ def cmd_report(args):
     elif rtype == "overdue":
         today = today_iso()
         candidates = sorted(
-            [t for t in open_tasks(tasks) if t.get("due_date") and t["due_date"] < today],
+            [t for t in open_tasks(tasks) if t.get("due_date") and t["due_date"] <= today],
             key=lambda t: t.get("due_date") or "",
         )
         if not candidates:
             print("No overdue tasks.")
             return
-        print(f"OVERDUE ({len(candidates)}):\n")
+        print(f"DUE TODAY OR OVERDUE ({len(candidates)}):\n")
         for t in candidates:
             print(fmt_task(t))
             print()

@@ -1,0 +1,213 @@
+{
+  "wrike_task": {
+    "intent": "Project management reference - URL link to the Wrike task for tracking and reference",
+    "prompt": "The Wrike task is a project management reference that typically appears as a table row with 'Wrike task' as the label and contains a URL link to the task. Look for variations like 'Wrike', 'Task', 'Project task', or similar project management tool references. The URL is usually in markdown link format [text](url) or plain URL format. FORMAT: Create an object with a single 'url' field (string). Extract the URL from markdown format [text](url) by taking only the URL portion, or use the plain URL if no markdown formatting is present. If no Wrike task is found, set url to null or empty string.",
+    "url": ""
+  },
+  "seo_best_practices": {
+    "intent": "SEO requirements checklist - Contains formatting, content, and structural requirements for the article (links, images, keyword usage, paragraph length, etc.)",
+    "prompt": "SEO best practices section contains a checklist of requirements for the article. It may be labeled as 'SEO best practices', 'SEO requirements', 'Content requirements', 'SEO checklist', or similar. It often includes a reference link to a guide. The checklist items are typically bullet points or comma-separated items that describe formatting, content, and structural requirements like number of links, images, keyword usage, paragraph length, etc. FORMAT: Create an object with two fields: 'reference_link' (string, may be empty if not found) and 'checklist' (array of strings). Extract the reference link from any markdown links or plain URLs in the section. Parse checklist items from bullet points (markdown or plain), comma-separated lists, or line-separated text. Each checklist item should be a separate string in the array. Normalize whitespace and remove leading/trailing spaces from each item.",
+    "reference_link": "",
+    "checklist": []
+  },
+  "url_slug": {
+    "intent": "URL path segment - The permalink/slug where the article will be published (e.g., 'article-topic-guide/')",
+    "prompt": "The URL slug is the path segment where the article will be published. It's typically labeled as 'URL to go live with', 'URL slug', 'Permalink', 'URL path', or 'Slug'. It's usually a lowercase, hyphenated string ending with a forward slash, representing the article's URL path. FORMAT: Create an object with a single 'value' field (string). Extract the slug value directly. If it doesn't end with a forward slash, add one. Preserve the exact casing as found (though typically lowercase). If not found, set value to empty string.",
+    "value": ""
+  },
+  "meta_title": {
+    "intent": "SEO title tag - The title that appears in search engine results and browser tabs (typically 50-60 characters, keyword-rich)",
+    "prompt": "The meta title (also called SEO title) is the title tag that appears in search engine results and browser tabs. Look for labels like 'Meta title', 'SEO title', 'Title tag', 'Page title', or 'Title'. It's typically a concise, keyword-rich string (usually 50-60 characters) that describes the article's main topic. FORMAT: Create an object with a single 'value' field (string). Extract the title text directly, preserving capitalization and punctuation. Remove any markdown formatting if present. Trim leading/trailing whitespace. If not found, set value to empty string.",
+    "value": ""
+  },
+  "meta_description": {
+    "intent": "SEO description snippet - The text shown in search engine results (typically 135-155 characters, includes key topics and may end with CTA or question)",
+    "prompt": "The meta description is the snippet text shown in search engine results. It may be labeled as 'Meta description', 'SEO description', 'Description', or 'Meta desc'. Often includes a character count requirement (typically 135-155 characters). The value is a concise summary that includes key topics and may end with a call to action or question. FORMAT: Create an object with two fields: 'character_count_requirement' (object with 'min' and 'max' as numbers) and 'value' (string). Extract the character count requirement from text like '(135-155 characters)' or similar patterns - parse the min and max numbers. If no requirement is specified, set min to 135 and max to 155 as defaults. Extract the description text, removing any markdown formatting and trimming whitespace. If not found, set value to empty string and use default character count requirements.",
+    "character_count_requirement": {
+      "min": 135,
+      "max": 155
+    },
+    "value": ""
+  },
+  "h2_headings": {
+    "intent": "Article structure - Main section headings (H2) that form the article outline, typically questions or statements representing major sections",
+    "prompt": "H2 headings are the main section headings for the article, typically listed under 'Headings — H2', 'H2 headings', 'Section headings', 'Article structure', or 'Outline'. They may be presented as a list, comma-separated, or in a table. Each heading is a question or statement that represents a major section of the article. Variations in formatting (extra spaces, line breaks) should be normalized. FORMAT: Create an object with a single 'headings' field (array of strings). Parse headings from comma-separated lists, bullet points, table cells, or line-separated text. Each heading should be a separate string in the array. Normalize whitespace: remove extra spaces, normalize line breaks, trim leading/trailing whitespace from each heading. Preserve capitalization and punctuation. If no headings found, set headings to empty array.",
+    "headings": []
+  },
+  "key_highlights": {
+    "intent": "GEO optimization - Bullet points summarizing main article points for generative engine optimization (typically 2-4 bullet points)",
+    "prompt": "Key highlights are bullet points summarizing the article's main points, used for generative engine optimization (GEO). May be labeled as 'Key highlights', 'Highlights', 'Summary points', 'GEO highlights', or 'Key takeaways'. Typically includes instructions about format (2-4 bullet points) and purpose. The actual content may be empty if the article hasn't been written yet. FORMAT: Create an object with three fields: 'purpose' (string, extracted from description text about why highlights are needed), 'format_requirement' (string, extracted from instructions about format like '2-4 bullet points'), and 'content' (array of strings, the actual highlight bullet points if provided). If purpose or format_requirement text is not explicitly stated, infer from context or set to empty string. Parse content from bullet points if present, otherwise leave as empty array. Each highlight should be a separate string in the content array.",
+    "purpose": "",
+    "format_requirement": "",
+    "content": []
+  },
+  "keywords": {
+    "intent": "SEO targeting - Search terms and keyword variations the article should target for SEO (related terms and variations of the main topic keyword)",
+    "prompt": "Keywords are the search terms the article should target for SEO. May be labeled as 'Keywords', 'Target keywords', 'SEO keywords', 'Focus keywords', or 'Key terms'. Usually presented as a space-separated or comma-separated list, or as bullet points. These are variations and related terms of the main topic keyword. FORMAT: Create an object with a single 'keywords' field (array of strings). Parse keywords from space-separated text, comma-separated lists, or bullet points. Split on commas, spaces, or bullet markers. Each keyword phrase should be a separate string in the array. Trim whitespace from each keyword. Preserve the exact phrasing as written (don't split multi-word keywords). If not found, set keywords to empty array.",
+    "keywords": []
+  },
+  "inspiration_links": {
+    "intent": "Competitive benchmarking - URLs to competitor or reference articles used as benchmarks or inspiration for content quality and structure",
+    "prompt": "Inspiration links are URLs to competitor or reference articles that should be used as benchmarks or inspiration. May be labeled as 'Inspiration links', 'Page to beat', 'Reference links', 'Competitor links', 'Benchmark pages', or 'Inspiration'. Usually presented as a list of URLs, either in markdown link format [text](url) or plain URLs. These are external links to similar content. FORMAT: Create an object with a single 'urls' field (array of strings). Extract URLs from markdown format [text](url) by taking only the URL portion, or use plain URLs directly. Each URL should be a separate string in the array. Validate that URLs start with http:// or https://. If not found, set urls to empty array.",
+    "urls": []
+  },
+  "internal_links": {
+    "intent": "Internal linking strategy - Links to other pages on the same website that should be included in the article for SEO and user navigation",
+    "prompt": "Internal links are links to other pages on the same website that should be included in the article. May be labeled as 'Internal links', 'Cross-links', 'Related links', 'Site links', or 'Anchor links'. Often includes instruction about anchor text usage. Typically presented as markdown links [anchor text](url) where the anchor text is the clickable text and the URL is the internal page. Extract both the anchor text and URL for each link. FORMAT: Create an object with a single 'links' field (array of objects). Each object in the array must have exactly two fields: 'anchor_text' (string) and 'url' (string). Parse markdown links [anchor text](url) to extract both components. If links are in plain URL format without anchor text, use the URL path or filename as the anchor_text. Each link should be a separate object in the array. If not found, set links to empty array.",
+    "links": []
+  },
+  "recommended_word_count": {
+    "intent": "Content length target - Target word count guideline for the article writer",
+    "prompt": "The recommended word count is the target length for the article. May be labeled as 'Recommended word count', 'Word count', 'Target length', 'Article length', or 'Word target'. Usually presented as a number, sometimes with commas as thousands separators. This is a guideline for the writer. FORMAT: Create an object with a single 'value' field (number, not string). Extract the numeric value, removing any commas, spaces, or non-numeric characters. Convert to integer. If a range is given (e.g., '1500-2000'), use the first/lower number. If not found, set value to null or 0.",
+    "value": null
+  },
+  "notes": {
+    "intent": "Additional editorial guidance - Additional instructions, context, or requirements that don't fit into other structured fields (editorial guidance, company-specific context, special requirements)",
+    "prompt": "Notes are additional instructions, context, or requirements for the article that don't fit into other structured fields. May be labeled as 'Notes', 'Additional notes', 'Instructions', 'Context', 'Requirements', or 'Additional information'. Usually presented as bullet points or numbered list. These provide editorial guidance, company-specific context, or special requirements. FORMAT: Create an object with a single 'items' field (array of strings). Parse notes from bullet points (markdown or plain), numbered lists, or line-separated text. Each note should be a separate string in the array. Preserve the exact text including punctuation, quotes, and special characters. Trim leading/trailing whitespace but preserve internal formatting. If not found, set items to empty array.",
+    "items": []
+  },
+  "article_outline": {
+    "intent": "Complete article structure - Full structured breakdown with H1 title, introduction instructions, key highlights, and each H2 section with detailed writing instructions, H3 subheadings, format requirements, and pre-written content",
+    "structure": {
+      "h1_title": "Main article title (H1) - The primary heading for the article",
+      "introduction": {
+        "instructions": "Writing instructions for the introduction section",
+        "final_sentence": "Optional pre-written final sentence for the introduction"
+      },
+      "key_highlights": {
+        "instructions": "Instructions for writing the key highlights section",
+        "content": "Array of highlight bullet points (may be empty if not yet written)"
+      },
+      "sections": "Array of section objects, each containing: h2_heading, instructions, h3_headings, pre_written_content, format_requirements, internal_links_in_section"
+    },
+    "prompt": "The article outline is a complete structured breakdown of the article with H2 headings and detailed writing instructions for each section. This appears after the initial metadata section and contains the full article structure with the H1 title, introduction instructions, key highlights, and each H2 section with its specific writing instructions. H2 headings may have H3 subheadings (placeholders or actual headings) and detailed instructions about content, length, format, and structure. Some sections may include pre-written content like final sentences or CTAs that should be preserved. FORMAT: Create an object with fields: 'h1_title' (string, the main article title), 'introduction' (object with 'instructions' string and 'final_sentence' string if provided), 'key_highlights' (object with 'instructions' string and 'content' array), and 'sections' (array of objects). Each section object should have: 'h2_heading' (string), 'instructions' (string, the writing instructions for that section), 'h3_headings' (array of strings, if H3 placeholders or headings are specified), 'pre_written_content' (array of strings, for any pre-written sentences, CTAs, or content that should be included), and 'format_requirements' (string, any specific format requirements like word count, bullet points, etc.). Preserve all instructions exactly as written, including formatting guidance, word counts, and structural requirements.",
+    "h1_title": "",
+    "introduction": {
+      "instructions": "",
+      "final_sentence": ""
+    },
+    "key_highlights": {
+      "instructions": "",
+      "content": []
+    },
+    "sections": [
+      {
+        "intent": "Individual H2 section with writing instructions - Contains heading, detailed writing instructions, optional H3 subheadings, pre-written content, format requirements, and section-specific internal links",
+        "structure": {
+          "h2_heading": "The H2 section heading",
+          "instructions": "Detailed writing instructions for this section (content, tone, structure, length)",
+          "h3_headings": "Array of H3 subheadings (placeholders or actual headings) for this section",
+          "pre_written_content": "Array of pre-written sentences, CTAs, or content blocks that must be included",
+          "format_requirements": "Specific format requirements (e.g., 'two paragraphs and include bullets', 'each H3: two paragraphs')",
+          "internal_links_in_section": "Array of internal link objects (anchor_text, url) that should be used in this specific section"
+        },
+        "h2_heading": "",
+        "instructions": "",
+        "h3_headings": [],
+        "pre_written_content": [],
+        "format_requirements": "",
+        "internal_links_in_section": []
+      }
+    ]
+  },
+  "mirantis_perspective": {
+    "intent": "Company positioning - Mirantis-specific perspective on the topic, including definition, key points, and how Mirantis products/services relate to the article topic",
+    "prompt": "Mirantis perspective section contains the company's viewpoint on the topic, including definitions, key points, and product/service positioning. May be labeled as 'Mirantis perspective', 'Mirantis take', 'Company perspective', 'Our view', or similar. Typically includes a summary paragraph and key points as bullet points. This provides editorial context for how to position Mirantis products/services in the article. FORMAT: Create an object with two fields: 'summary' (string, the main perspective paragraph) and 'key_points' (array of strings, bullet points of key aspects). Extract the summary from paragraph text. Parse key points from bullet points. Preserve exact wording and formatting. If not found, set summary to empty string and key_points to empty array.",
+    "summary": "",
+    "key_points": []
+  },
+  "research_findings": {
+    "intent": "Research data compilation - Compiled research data points, tables, and images/graphs from SEO research phase, including source URLs, publication dates, authority levels, quantitative values, and mapping to article sections",
+    "structure": {
+      "data_points": "Array of research data point objects, each containing: source_url, publication_date, source_type_authority, description, quantitative_value, h2_mapping (array of H2 headings where this data point should be used), brief_relevance_note",
+      "tables": "Array of table objects (structure TBD based on actual table data)",
+      "images_graphs": "Array of image/graph objects (structure TBD based on actual image data)",
+      "meta": {
+        "included_source_urls": "Array of all source URLs used in research",
+        "note": "Notes about the research process, requirements met, and any limitations"
+      }
+    },
+    "prompt": "Research findings section contains compiled data from the SEO research phase, including quantitative data points, tables, and images/graphs. Each data point includes source information, quantitative values, and mapping to relevant article sections. May be labeled as 'Research findings', 'Data points', 'Research data', 'Quantitative stats', or similar. FORMAT: Create an object with fields: 'data_points' (array of objects), 'tables' (array of objects), 'images_graphs' (array of objects), and 'meta' (object with 'included_source_urls' array and 'note' string). Each data point object should have: 'source_url' (string), 'publication_date' (string), 'source_type_authority' (string), 'description' (string), 'quantitative_value' (string), 'h2_mapping' (array of strings - H2 headings), and 'brief_relevance_note' (string). If not found, set arrays to empty arrays.",
+    "data_points": [
+      {
+        "source_url": "",
+        "publication_date": "",
+        "source_type_authority": "",
+        "description": "",
+        "quantitative_value": "",
+        "h2_mapping": [],
+        "brief_relevance_note": ""
+      }
+    ],
+    "tables": [],
+    "images_graphs": [],
+    "meta": {
+      "included_source_urls": [],
+      "note": ""
+    }
+  },
+  "quantitative_stats_library": {
+    "intent": "Detailed statistics library - Comprehensive library of quantitative statistics with full source metadata, quote text, metric types, context, 'so what' analysis, and editorial decision tracking",
+    "structure": {
+      "sources": "Array of source objects, each containing: id, title, publisher, url, publication_date, theme_tags, stats (array of stat objects)",
+      "stats": "Array of stat objects within each source, each containing: id, quote_text, metric_type, what_it_measures, context, so_what, numeric_values, editorial_decision (status, reason)",
+      "meta": {
+        "topic": "Article topic",
+        "generated_at": "Date when library was generated",
+        "source_file": "Source file name",
+        "iteration": "Version/iteration number",
+        "note": "Notes about generation process and source selection criteria"
+      }
+    },
+    "prompt": "Quantitative stats library contains a comprehensive collection of statistics with full source metadata, quote text, metric analysis, and editorial tracking. May be labeled as 'Quantitative stats library', 'Stats library', 'Statistics', or similar. Each stat includes source information, quote text, metric type, context, 'so what' analysis, and editorial decision status. FORMAT: Create an object with 'sources' (array of objects) and 'meta' (object). Each source object should have: 'id' (string), 'title' (string), 'publisher' (string), 'url' (string), 'publication_date' (string), 'theme_tags' (array of strings), and 'stats' (array of objects). Each stat object should have: 'id' (string), 'quote_text' (string), 'metric_type' (string), 'what_it_measures' (string), 'context' (string), 'so_what' (string), 'numeric_values' (array of strings), and 'editorial_decision' (object with 'status' string and 'reason' string). Meta object should have: 'topic', 'generated_at', 'source_file', 'iteration', 'note'. If not found, set sources to empty array.",
+    "sources": [
+      {
+        "id": "",
+        "title": "",
+        "publisher": "",
+        "url": "",
+        "publication_date": "",
+        "theme_tags": [],
+        "stats": [
+          {
+            "id": "",
+            "quote_text": "",
+            "metric_type": "",
+            "what_it_measures": "",
+            "context": "",
+            "so_what": "",
+            "numeric_values": [],
+            "editorial_decision": {
+              "status": "",
+              "reason": ""
+            }
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "topic": "",
+      "generated_at": "",
+      "source_file": "",
+      "iteration": null,
+      "note": ""
+    }
+  },
+  "internal_links_summaries": [
+    {
+      "intent": "Internal link context - Detailed summary of an internal link including content description, key points, and suggested placement guidance for strategic link placement throughout the article",
+      "structure": {
+        "anchor_text": "The clickable text for the link",
+        "url": "The internal URL to link to",
+        "summary": "Description of what the linked page covers and how it relates to the article topic",
+        "key_points": "Array of main points from the linked page",
+        "suggested_placement": "Guidance on which article sections (H2 headings) would be appropriate for using this link"
+      },
+      "anchor_text": "",
+      "url": "",
+      "summary": "",
+      "key_points": [],
+      "suggested_placement": ""
+    }
+  ]
+}

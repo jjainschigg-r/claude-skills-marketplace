@@ -1,0 +1,6 @@
+{
+  "name": "researcher",
+  "description": "Web research assistant: discovers, fetches, and synthesizes sources including PDFs behind gated landing pages.",
+  "version": "1.0.0",
+  "mcpServers": "./.mcp.json"
+}
