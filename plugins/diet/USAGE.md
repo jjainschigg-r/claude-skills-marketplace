@@ -18,7 +18,19 @@
 ## Operations
 
 ### `/diet log`
-Describe what you ate. Grams are best; vague amounts work too.
+Describe what you ate. Grams are best but entirely optional — vague amounts are resolved automatically:
+
+| You say | Logged as |
+|---|---|
+| "a handful" (nuts) | 30g |
+| "a small handful" (berries, edamame) | 40g |
+| "a few bites" (protein) | 45g |
+| "a slice" (rugbrød, dense bread) | 30g |
+| "a scoop" (whey protein powder) | 30g |
+| "a tablespoon" (oil, condiment) | 14g |
+| "a cup" (liquid) | 240ml |
+
+Anything outside the table gets a best-guess estimate noted in the log. Correct anything that looks off.
 
 > *"113g baked salmon, cup of roasted broccoli, slice of rugbrød, fish oil and plant sterols"*
 > *"3 cup soymilk smoothie with banana and 3x psyllium"*
