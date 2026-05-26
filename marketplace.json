@@ -5,6 +5,16 @@
   },
   "plugins": [
     {
+      "name": "diet",
+      "description": "Track daily food intake and biometrics against evidence-based cardiometabolic targets with per-meal gap analysis",
+      "version": "1.2.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jjainschigg-r/claude-skills-marketplace.git",
+        "path": "plugins/diet"
+      }
+    },
+    {
       "name": "example-mcp-node-skill",
       "description": "Demonstrates a skill backed by a Node.js MCP server with an external dependency.",
       "version": "1.0.0",
