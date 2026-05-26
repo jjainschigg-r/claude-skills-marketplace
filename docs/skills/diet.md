@@ -81,9 +81,14 @@ Then install the plugin:
 /diet log
 ```
 
-Describe what you ate with gram amounts. Claude looks up nutritional values, appends rows to `compliance.csv`, and prints a gap analysis against your daily targets (calories, protein, saturated fat, soy protein, soluble fiber, omega-3, sodium).
+Describe what you ate. Gram amounts are precise but not required — vague measures are resolved automatically: "a handful" of nuts → 30g, "a few bites" of protein → 45g, "a slice" of rugbrød → 30g, "a cup" of liquid → 240ml, and so on. Anything outside the standard defaults gets a best-guess estimate noted in the log.
 
-Example: *"300g roast broccoli, 177g baked salmon, 25g walnuts, 40g rolled oats with 100g kefir and 10g dried tart cherries"*
+Claude looks up nutritional values, appends rows to `compliance.csv`, and prints a gap analysis against your daily targets (calories, protein, saturated fat, soy protein, soluble fiber, omega-3, sodium).
+
+Examples:
+- *"300g roast broccoli, 177g baked salmon, 25g walnuts, 40g rolled oats with 100g kefir"*
+- *"a handful of walnuts, a few bites of salmon, slice of rugbrød"*
+- *"a bowl of lentil soup, some edamame, did all the supplements"*
 
 ### Log a biometric reading
 
