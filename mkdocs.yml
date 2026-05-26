@@ -69,6 +69,8 @@ nav:
     - validate-marketplace: skills/plugin-dev-tools/validate-marketplace.md
   - General Purpose Plugins:
     - markdown-doc-cleaner: skills/markdown-doc-cleaner.md
+  - Extended Skills:
+    - diet: skills/diet.md
   - Content Creation Plugins:
     - seo-claude-plugin: skills/seo-claude-plugin.md
     - researcher: skills/researcher.md
