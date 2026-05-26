@@ -1,0 +1,6 @@
+{
+  "name": "diet",
+  "description": "Track daily food intake and biometrics against evidence-based cardiometabolic targets with per-meal gap analysis",
+  "version": "1.2.0",
+  "mcpServers": "./.mcp.json"
+}
